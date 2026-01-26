@@ -227,6 +227,6 @@ rm -rf .vitepress/.cache
 
 如果你遇到问题，可以：
 
-1. 查看[FAQ](../blog/)，寻找常见问题解答
+1. 查看[常见问题](./deployment/)，寻找解决方案
 2. 提交[Issue](https://github.com/yourusername/awesome-ai-pedia/issues)
 3. 参与[讨论](https://github.com/yourusername/awesome-ai-pedia/discussions)
