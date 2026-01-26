@@ -2,57 +2,83 @@ import { defineConfig } from 'vitepress'
 import { glob } from 'glob'
 import matter from 'gray-matter'
 import path from 'path'
+import fs from 'fs'
 
-// 自动从目录结构生成侧边栏
-async function generateSidebar() {
-  const sidebar = {}
-
-  // 读取所有markdown文件
-  const files = glob.sync('docs/**/*.md', { ignore: ['docs/index.md', 'docs/.vitepress/**'] })
-
-  files.forEach(file => {
-    const parts = file.replace(/^docs\//, '').split('/')
-    const isIndex = parts[parts.length - 1] === 'index.md'
-    const section = isIndex ? parts[0] : parts.slice(0, -1).join('/') || 'root'
-
-    if (!sidebar[section]) {
-      sidebar[section] = []
-    }
-
-    const filePath = path.join(file)
-    const content = matter.read(file).data
-
-    const item = {
-      text: content.title || parts[parts.length - 1].replace(/\.md$/, ''),
-      link: '/' + filePath.replace(/^docs\//, '').replace(/\.md$/, ''),
-    }
-
-    if (content.date) {
-      item.text = `📅 ${item.text}`
-    }
-
-    sidebar[section].push(item)
-  })
-
-  // 对每个section进行排序
-  Object.keys(sidebar).forEach(section => {
-    sidebar[section].sort((a, b) => {
-      const aHasDate = a.text.includes('📅')
-      const bHasDate = b.text.includes('📅')
-      if (aHasDate && bHasDate) return 0
-      if (aHasDate) return -1
-      if (bHasDate) return 1
-      return 0
+// 获取目录下的所有markdown文件
+function getMarkdownFiles(dirPath) {
+  const files = []
+  if (fs.existsSync(dirPath)) {
+    const items = fs.readdirSync(dirPath, { withFileTypes: true })
+    items.forEach(item => {
+      if (item.isFile() && item.name.endsWith('.md')) {
+        files.push(item.name)
+      }
     })
+  }
+  return files.sort()
+}
+
+// 生成AI知识库侧边栏
+function generateAISidebar() {
+  const aiBase = path.join(__dirname, '../ai')
+  const categories = []
+
+  if (!fs.existsSync(aiBase)) {
+    return []
+  }
+
+  const dirs = fs.readdirSync(aiBase, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
+    .sort()
+
+  dirs.forEach(dir => {
+    const dirPath = path.join(aiBase, dir)
+    const files = getMarkdownFiles(dirPath)
+
+    if (files.length > 0) {
+      const items = files.map(file => ({
+        text: file.replace('.md', ''),
+        link: `/ai/${dir}/${file.replace('.md', '')}`
+      }))
+
+      // 使用中文目录名
+      const displayName = getDisplayName(dir)
+
+      categories.push({
+        text: displayName,
+        collapsed: false,
+        items
+      })
+    }
   })
 
-  return sidebar
+  return categories
+}
+
+// 获取中文显示名称
+function getDisplayName(dir) {
+  const nameMap = {
+    'claudecode': 'Claude Code',
+    'cursor': 'Cursor',
+    'mcp': 'MCP',
+    'prompt': 'Prompt',
+    'rules': 'Rules',
+    'skills': 'Skills',
+    'hao-de-rules': '好的Rules',
+    'chang-yong-skills': '常用Skills',
+    'bu-shu-ai': '部署AI',
+    'shi-yong-ai-ji-qiao': '使用AI技巧',
+    'kai-fa-ai-ying-yong': '开发AI应用'
+  }
+  return nameMap[dir] || dir
 }
 
 export default defineConfig({
   title: 'Awesome AI Pedia',
   description: 'AI知识库与博客',
   lang: 'zh-CN',
+  base: '/Awesome-AI-Pedia/',
   lastUpdated: true,
   cleanUrls: true,
 
@@ -64,21 +90,15 @@ export default defineConfig({
     // 导航栏
     nav: [
       { text: '首页', link: '/' },
+      { text: 'AI知识库', link: '/ai/' },
       { text: '博客', link: '/blog/' },
       { text: '指南', link: '/guide/' },
-      {
-        text: '分类',
-        items: [
-          { text: '开发技巧', link: '/blog/development/' },
-          { text: 'AI应用', link: '/blog/ai-applications/' },
-          { text: '工具推荐', link: '/blog/tools/' }
-        ]
-      },
       { text: '关于', link: '/about' }
     ],
 
     // 侧边栏
     sidebar: {
+      '/ai/': generateAISidebar(),
       '/blog/': [
         {
           text: '📚 博客文章',
@@ -105,12 +125,12 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/awesome-ai-pedia' }
+      { icon: 'github', link: 'https://github.com/qdleader/Awesome-AI-Pedia' }
     ],
 
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/yourusername/awesome-ai-pedia/edit/master/docs/:path',
+      pattern: 'https://github.com/qdleader/Awesome-AI-Pedia/edit/master/docs/:path',
       text: '在GitHub上编辑此页'
     },
 
@@ -172,10 +192,5 @@ export default defineConfig({
 
   // 本地开发服务器
   srcDir: '.',
-  cacheDir: '.vitepress/.cache',
-
-  // 自动生成侧边栏（可选的动态方式）
-  async sidebar() {
-    return await generateSidebar()
-  }
+  cacheDir: '.vitepress/.cache'
 })

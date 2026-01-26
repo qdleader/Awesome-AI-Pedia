@@ -30,7 +30,7 @@ stats.html
 package-lock.json
 yarn.lock
 
-.vuepress/.temp
-.vuepress/.cache/
-.vuepress/.cache
-.vuepress/.cache/*
+docs/.vitepress/.temp
+docs/.vitepress/.cache/
+docs/.vitepress/.cache
+docs/.vitepress/.cache/*
