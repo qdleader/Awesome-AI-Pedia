@@ -57,21 +57,76 @@ function generateAISidebar() {
 }
 
 // 获取中文显示名称
-function getDisplayName(dir) {
-  const nameMap = {
+function getDisplayName(dir: string): string {
+  const nameMap: Record<string, string> = {
     'claudecode': 'Claude Code',
+    'claudeCode': 'Claude Code',
     'cursor': 'Cursor',
     'mcp': 'MCP',
     'prompt': 'Prompt',
     'rules': 'Rules',
     'skills': 'Skills',
     'hao-de-rules': '好的Rules',
+    '好的rules': '好的Rules',
     'chang-yong-skills': '常用Skills',
+    '常用skills': '常用Skills',
     'bu-shu-ai': '部署AI',
+    '部署ai': '部署AI',
     'shi-yong-ai-ji-qiao': '使用AI技巧',
-    'kai-fa-ai-ying-yong': '开发AI应用'
+    '使用ai技巧': '使用AI技巧',
+    'kai-fa-ai-ying-yong': '开发AI应用',
+    '开发ai应用相关问题': '开发AI应用'
   }
   return nameMap[dir] || dir
+}
+
+// 获取URL友好的路径名
+function getUrlFriendlyName(dir: string): string {
+  const urlMap: Record<string, string> = {
+    'claudeCode': 'claudecode',
+    '好的rules': 'hao-de-rules',
+    '常用skills': 'chang-yong-skills',
+    '部署ai': 'bu-shu-ai',
+    '使用ai技巧': 'shi-yong-ai-ji-qiao',
+    '开发ai应用相关问题': 'kai-fa-ai-ying-yong'
+  }
+  return urlMap[dir] || dir.toLowerCase()
+}
+
+// 动态生成顶部导航栏
+function generateNav() {
+  const rootDir = path.join(__dirname, '../..')
+  const navItems: Array<{ text: string; link: string }> = [
+    { text: '首页', link: '/' }
+  ]
+
+  // 需要展示在导航栏的文件夹列表（按显示顺序）
+  const contentDirs = [
+    'claudeCode',
+    'cursor', 
+    'mcp',
+    'prompt',
+    'rules',
+    'skills',
+    '好的rules',
+    '常用skills',
+    '部署ai',
+    '使用ai技巧',
+    '开发ai应用相关问题'
+  ]
+
+  contentDirs.forEach(dir => {
+    const dirPath = path.join(rootDir, dir)
+    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
+      const urlPath = getUrlFriendlyName(dir)
+      navItems.push({
+        text: getDisplayName(dir),
+        link: `/ai/${urlPath}/`
+      })
+    }
+  })
+
+  return navItems
 }
 
 export default defineConfig({
@@ -87,14 +142,8 @@ export default defineConfig({
 
   // 主题配置
   themeConfig: {
-    // 导航栏
-    nav: [
-      { text: '首页', link: '/' },
-      { text: 'AI知识库', link: '/ai/' },
-      { text: '博客', link: '/blog/' },
-      { text: '指南', link: '/guide/' },
-      { text: '关于', link: '/about' }
-    ],
+    // 导航栏 - 动态生成
+    nav: generateNav(),
 
     // 侧边栏
     sidebar: {
