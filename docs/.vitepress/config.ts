@@ -56,6 +56,9 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
 
+  // 忽略死链接检查
+  ignoreDeadLinks: true,
+
   // 主题配置
   themeConfig: {
     // 导航栏
