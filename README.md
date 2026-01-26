@@ -332,19 +332,6 @@ A: 在`custom.css`中引入字体，并在配置中设置。
 
 [MIT License](LICENSE)
 
-## 🙏 致谢
-
-感谢以下开源项目：
-
-- [VitePress](https://vitepress.vuejs.org/) - 静态网站生成器
-- [Vue.js](https://vuejs.org/) - 渐进式框架
-- [Vite](https://vitejs.cn/) - 下一代前端构建工具
-
-## 📞 联系方式
-
-- 📧 Email: your-email@example.com
-- 🐦 Twitter: [@yourusername](https://twitter.com/yourusername)
-- 💬 Discord: [加入服务器](https://discord.gg/yourserver)
 
 ## ⭐ 支持
 
