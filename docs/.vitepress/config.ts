@@ -155,7 +155,7 @@ export default defineConfig({
   title: 'Awesome AI Pedia',
   description: 'AI知识库与博客',
   lang: 'zh-CN',
-  base: '/Awesome-AI-Pedia/',
+  base: '/',
   lastUpdated: true,
   cleanUrls: true,
 
