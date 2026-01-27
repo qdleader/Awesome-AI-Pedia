@@ -1,5 +1,10 @@
 import path from 'path'
 import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // 获取目录下的所有markdown文件
 export function getMarkdownFiles(dirPath: string): string[] {
