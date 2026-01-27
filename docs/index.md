@@ -4,10 +4,6 @@ hero:
   name: Awesome AI Pedia
   text: AI 知识库
   tagline: 探索AI的无限可能，分享开发经验与技术洞察
-  actions:
-    - theme: brand
-      text: 浏览知识库
-      link: /ai/
 ---
 
 <div class="lobster-animation-container">
