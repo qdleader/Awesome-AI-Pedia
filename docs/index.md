@@ -56,7 +56,7 @@ features:
     <div class="nav-card-content">
       <h3 class="nav-card-title">Claude Code</h3>
       <p class="nav-card-desc">Claude AI编码助手的使用技巧和配置</p>
-      <a href="/ai/claudecode/" class="nav-card-link">
+      <a href="/Awesome-AI-Pedia/ai/claudecode/" class="nav-card-link">
         <span>探索更多</span>
         <svg class="nav-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -71,7 +71,7 @@ features:
     <div class="nav-card-content">
       <h3 class="nav-card-title">Cursor</h3>
       <p class="nav-card-desc">Cursor AI编辑器的使用方法和最佳实践</p>
-      <a href="/ai/cursor/" class="nav-card-link">
+      <a href="/Awesome-AI-Pedia/ai/cursor/" class="nav-card-link">
         <span>探索更多</span>
         <svg class="nav-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -86,7 +86,7 @@ features:
     <div class="nav-card-content">
       <h3 class="nav-card-title">Prompt</h3>
       <p class="nav-card-desc">提示词工程和优化技巧</p>
-      <a href="/ai/prompt/" class="nav-card-link">
+      <a href="/Awesome-AI-Pedia/ai/prompt/" class="nav-card-link">
         <span>探索更多</span>
         <svg class="nav-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -101,7 +101,7 @@ features:
     <div class="nav-card-content">
       <h3 class="nav-card-title">MCP</h3>
       <p class="nav-card-desc">模型上下文协议相关资源</p>
-      <a href="/ai/mcp/" class="nav-card-link">
+      <a href="/Awesome-AI-Pedia/ai/mcp/" class="nav-card-link">
         <span>探索更多</span>
         <svg class="nav-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -116,7 +116,7 @@ features:
     <div class="nav-card-content">
       <h3 class="nav-card-title">Rules</h3>
       <p class="nav-card-desc">各种AI编码规则和最佳实践</p>
-      <a href="/ai/rules/" class="nav-card-link">
+      <a href="/Awesome-AI-Pedia/ai/rules/" class="nav-card-link">
         <span>探索更多</span>
         <svg class="nav-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -131,7 +131,7 @@ features:
     <div class="nav-card-content">
       <h3 class="nav-card-title">Skills</h3>
       <p class="nav-card-desc">AI技能集合和实用工具</p>
-      <a href="/ai/skills/" class="nav-card-link">
+      <a href="/Awesome-AI-Pedia/ai/skills/" class="nav-card-link">
         <span>探索更多</span>
         <svg class="nav-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
