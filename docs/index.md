@@ -2,7 +2,7 @@
 layout: home
 hero:
   name: Awesome AI Pedia
-  text: AI知识库与博客
+  text: AI 知识库
   tagline: 探索AI的无限可能，分享开发经验与技术洞察
   actions:
     - theme: brand
@@ -45,6 +45,42 @@ features:
         <stop offset="100%" stop-color="var(--vp-c-brand-2, #747bff)"></stop>
       </linearGradient>
     </defs>
+  </svg>
+</div>
+
+<!-- 小清新装饰层 -->
+<div class="fresh-decorations">
+  <!-- 浮动气泡 -->
+  <div class="floating-bubbles">
+    <div class="bubble" style="left: 10%; width: 60px; height: 60px; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 20%; width: 40px; height: 40px; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 35%; width: 80px; height: 80px; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 50%; width: 50px; height: 50px; animation-delay: 1s;"></div>
+    <div class="bubble" style="left: 65%; width: 35px; height: 35px; animation-delay: 3s;"></div>
+    <div class="bubble" style="left: 80%; width: 55px; height: 55px; animation-delay: 5s;"></div>
+    <div class="bubble" style="left: 90%; width: 45px; height: 45px; animation-delay: 2.5s;"></div>
+  </div>
+
+  <!-- 粒子效果 -->
+  <div class="particles">
+    <div class="particle" style="left: 15%; top: 20%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 25%; top: 40%; animation-delay: 0.5s;"></div>
+    <div class="particle" style="left: 45%; top: 30%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 55%; top: 60%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="left: 70%; top: 25%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 85%; top: 50%; animation-delay: 2.5s;"></div>
+    <div class="particle" style="left: 30%; top: 70%; animation-delay: 0.8s;"></div>
+    <div class="particle" style="left: 60%; top: 15%; animation-delay: 1.8s;"></div>
+    <div class="particle" style="left: 75%; top: 65%; animation-delay: 2.2s;"></div>
+    <div class="particle" style="left: 40%; top: 45%; animation-delay: 1.2s;"></div>
+  </div>
+</div>
+
+<!-- 波浪分隔线 -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+          fill="rgba(255, 255, 255, 0.8)"></path>
   </svg>
 </div>
 
@@ -143,6 +179,273 @@ features:
 </div>
 
 <style>
+/* ========================================
+   小清新风格样式
+   ======================================== */
+
+/* Hero 区域背景渐变 */
+:root .VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+:root .VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    #e0f7fa 0%,    /* 薄荷绿 */
+    #e1f5fe 25%,   /* 天空蓝 */
+    #f3e5f5 50%,   /* 淡紫色 */
+    #fce4ec 75%,   /* 淡粉色 */
+    #fff9c4 100%   /* 淡黄色 */
+  );
+  opacity: 0.25;
+  z-index: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 装饰层容器 */
+.fresh-decorations {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* 浮动气泡 */
+.floating-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(224, 247, 250, 0.3) 100%
+  );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(100, 108, 255, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: floatUp 20s infinite ease-in-out;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(20px) scale(1);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-20px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* 粒子效果 */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, 
+    rgba(100, 108, 255, 0.8) 0%,
+    rgba(116, 123, 255, 0.4) 50%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* 波浪分隔线 */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+  animation: waveMove 8s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+}
+
+/* Features 卡片美化 */
+:root .VPFeature {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.08) !important;
+}
+
+:root .VPFeature:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 16px 32px rgba(100, 108, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(100, 108, 255, 0.3) !important;
+}
+
+:root .VPFeature .icon {
+  font-size: 3rem !important;
+  animation: breathe 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(100, 108, 255, 0.2));
+}
+
+@keyframes breathe {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.08);
+  }
+}
+
+/* Hero 按钮优化 */
+:root .VPButton.brand {
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.3) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+:root .VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+:root .VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(100, 108, 255, 0.4) !important;
+}
+
+:root .VPButton.brand:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+:root .VPButton.brand:active {
+  transform: translateY(0) !important;
+}
+
+/* 暗黑模式适配 */
+.dark .fresh-decorations {
+  opacity: 0.6;
+}
+
+.dark .VPHero::before {
+  opacity: 0.15;
+}
+
+.dark .bubble {
+  background: linear-gradient(135deg, 
+    rgba(100, 108, 255, 0.2) 0%,
+    rgba(116, 123, 255, 0.15) 100%
+  );
+  border-color: rgba(100, 108, 255, 0.3);
+}
+
+.dark .VPFeature {
+  background: rgba(30, 30, 30, 0.7) !important;
+  border-color: rgba(100, 108, 255, 0.2) !important;
+}
+
+.dark .VPFeature:hover {
+  background: rgba(40, 40, 40, 0.85) !important;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .bubble {
+    animation-duration: 15s;
+  }
+  
+  .wave-divider svg {
+    height: 60px;
+  }
+  
+  :root .VPFeature .icon {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* ========================================
+   原有样式
+   ======================================== */
+
 /* Lobster Animation Container */
 .lobster-animation-container {
   display: flex;
