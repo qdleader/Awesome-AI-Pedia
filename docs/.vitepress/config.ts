@@ -12,6 +12,7 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   ignoreDeadLinks: true,
+  appearance: 'dark', // 默认使用暗黑主题
 
   themeConfig: {
     nav: generateNav(projectRoot),
