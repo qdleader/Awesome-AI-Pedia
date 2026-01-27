@@ -119,7 +119,7 @@ export function generateDynamicSidebar(folderName: string, baseDir: string) {
 
 // 动态生成顶部导航栏
 export function getProjectRoot(): string {
-  return path.resolve(__dirname, '../../');
+  return path.resolve(__dirname, '../../../');
 }
 
 // 动态生成顶部导航栏
@@ -136,7 +136,9 @@ export function generateNav(baseDir: string) {
     '.git',
     '.vitepress',
     '.github',
-    'public'
+    'public',
+    'dist',
+    '.claude'
   ]
 
   const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })
