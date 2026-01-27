@@ -11,17 +11,17 @@ title: Prompt
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./React+UI设计师Prompt">React+UI设计师Prompt</a>
+      <a href="/Awesome-AI-Pedia/ai/prompt/React+UI设计师Prompt">React+UI设计师Prompt</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./SVG海报设计专家Prompt">SVG海报设计专家Prompt</a>
+      <a href="/Awesome-AI-Pedia/ai/prompt/SVG海报设计专家Prompt">SVG海报设计专家Prompt</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./提示词优化网站">提示词优化网站</a>
+      <a href="/Awesome-AI-Pedia/ai/prompt/提示词优化网站">提示词优化网站</a>
     </div>
   </div>
 </div>

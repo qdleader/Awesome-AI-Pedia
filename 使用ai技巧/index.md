@@ -11,7 +11,7 @@ title: 使用AI技巧
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./有趣的问题">有趣的问题</a>
+      <a href="/Awesome-AI-Pedia/ai/shi-yong-ai-ji-qiao/有趣的问题">有趣的问题</a>
     </div>
   </div>
 </div>

@@ -11,27 +11,27 @@ title: 部署AI
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./免费的向量数据库">免费的向量数据库</a>
+      <a href="/Awesome-AI-Pedia/ai/bu-shu-ai/免费的向量数据库">免费的向量数据库</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./前端流式输出">前端流式输出</a>
+      <a href="/Awesome-AI-Pedia/ai/bu-shu-ai/前端流式输出">前端流式输出</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./国内linux服务器解决Ollama安装超时">国内linux服务器解决Ollama安装超时</a>
+      <a href="/Awesome-AI-Pedia/ai/bu-shu-ai/国内linux服务器解决Ollama安装超时">国内linux服务器解决Ollama安装超时</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./服务端部署ollama">服务端部署ollama</a>
+      <a href="/Awesome-AI-Pedia/ai/bu-shu-ai/服务端部署ollama">服务端部署ollama</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./本地部署deepseek">本地部署deepseek</a>
+      <a href="/Awesome-AI-Pedia/ai/bu-shu-ai/本地部署deepseek">本地部署deepseek</a>
     </div>
   </div>
 </div>

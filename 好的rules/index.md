@@ -11,27 +11,27 @@ title: 好的Rules
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./互动沟通">互动沟通</a>
+      <a href="/Awesome-AI-Pedia/ai/hao-de-rules/互动沟通">互动沟通</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./代码修改">代码修改</a>
+      <a href="/Awesome-AI-Pedia/ai/hao-de-rules/代码修改">代码修改</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./常用rules">常用rules</a>
+      <a href="/Awesome-AI-Pedia/ai/hao-de-rules/常用rules">常用rules</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./编码标准与实践">编码标准与实践</a>
+      <a href="/Awesome-AI-Pedia/ai/hao-de-rules/编码标准与实践">编码标准与实践</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./项目管理">项目管理</a>
+      <a href="/Awesome-AI-Pedia/ai/hao-de-rules/项目管理">项目管理</a>
     </div>
   </div>
 </div>

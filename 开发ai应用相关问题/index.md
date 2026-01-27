@@ -11,7 +11,7 @@ title: 开发AI应用
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./流式输出">流式输出</a>
+      <a href="/Awesome-AI-Pedia/ai/kai-fa-ai-ying-yong/流式输出">流式输出</a>
     </div>
   </div>
 </div>

@@ -11,32 +11,32 @@ title: 常用Skills
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./ code-simplifier 插件安装"> code-simplifier 插件安装</a>
+      <a href="/Awesome-AI-Pedia/ai/chang-yong-skills/ code-simplifier 插件安装"> code-simplifier 插件安装</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Superpowers">Superpowers</a>
+      <a href="/Awesome-AI-Pedia/ai/chang-yong-skills/Superpowers">Superpowers</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Superpowers安装及使用">Superpowers安装及使用</a>
+      <a href="/Awesome-AI-Pedia/ai/chang-yong-skills/Superpowers安装及使用">Superpowers安装及使用</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./code-simplifier的提示词">code-simplifier的提示词</a>
+      <a href="/Awesome-AI-Pedia/ai/chang-yong-skills/code-simplifier的提示词">code-simplifier的提示词</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./my-skill-brand">my-skill-brand</a>
+      <a href="/Awesome-AI-Pedia/ai/chang-yong-skills/my-skill-brand">my-skill-brand</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./ui ux pro max">ui ux pro max</a>
+      <a href="/Awesome-AI-Pedia/ai/chang-yong-skills/ui ux pro max">ui ux pro max</a>
     </div>
   </div>
 </div>

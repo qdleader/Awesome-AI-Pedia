@@ -11,27 +11,27 @@ title: Claude Code
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Claude Code 常用命令">Claude Code 常用命令</a>
+      <a href="/Awesome-AI-Pedia/ai/claudecode/Claude Code 常用命令">Claude Code 常用命令</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Claude Code 自动提醒配置">Claude Code 自动提醒配置</a>
+      <a href="/Awesome-AI-Pedia/ai/claudecode/Claude Code 自动提醒配置">Claude Code 自动提醒配置</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Claude Code安装">Claude Code安装</a>
+      <a href="/Awesome-AI-Pedia/ai/claudecode/Claude Code安装">Claude Code安装</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Claude 使用browser">Claude 使用browser</a>
+      <a href="/Awesome-AI-Pedia/ai/claudecode/Claude 使用browser">Claude 使用browser</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./settings.json">settings.json</a>
+      <a href="/Awesome-AI-Pedia/ai/claudecode/settings.json">settings.json</a>
     </div>
   </div>
 </div>

@@ -11,32 +11,32 @@ title: Cursor
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Cursor 对话回答如何设置成中文">Cursor 对话回答如何设置成中文</a>
+      <a href="/Awesome-AI-Pedia/ai/cursor/Cursor 对话回答如何设置成中文">Cursor 对话回答如何设置成中文</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./cursor 卸载">cursor 卸载</a>
+      <a href="/Awesome-AI-Pedia/ai/cursor/cursor 卸载">cursor 卸载</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./cursor 常用的功能">cursor 常用的功能</a>
+      <a href="/Awesome-AI-Pedia/ai/cursor/cursor 常用的功能">cursor 常用的功能</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./cursor 所有版本">cursor 所有版本</a>
+      <a href="/Awesome-AI-Pedia/ai/cursor/cursor 所有版本">cursor 所有版本</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./cursor 提示不支持本地区">cursor 提示不支持本地区</a>
+      <a href="/Awesome-AI-Pedia/ai/cursor/cursor 提示不支持本地区">cursor 提示不支持本地区</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./cursor 设置菜单栏在左侧">cursor 设置菜单栏在左侧</a>
+      <a href="/Awesome-AI-Pedia/ai/cursor/cursor 设置菜单栏在左侧">cursor 设置菜单栏在左侧</a>
     </div>
   </div>
 </div>

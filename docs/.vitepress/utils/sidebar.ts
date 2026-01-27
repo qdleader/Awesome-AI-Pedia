@@ -76,10 +76,16 @@ export function generateAISidebar(baseDir: string) {
     const files = getMarkdownFiles(dirPath)
 
     if (files.length > 0) {
-      const items = files.map((file: string) => ({
-        text: file.replace('.md', ''),
-        link: `/ai/${dir}/${file.replace('.md', '')}`
-      }))
+      // 使用 URL 友好的目录名
+      const urlFriendlyDir = dir
+      
+      const items = files.map((file: string) => {
+        const fileName = file.replace('.md', '')
+        return {
+          text: fileName,
+          link: `/ai/${urlFriendlyDir}/${fileName}`
+        }
+      })
 
       const displayName = getDisplayName(dir)
 
@@ -103,10 +109,15 @@ export function generateDynamicSidebar(folderName: string, baseDir: string) {
     return []
   }
 
-  const items = files.map((file: string) => ({
-    text: file.replace('.md', ''),
-    link: `/ai/${getUrlFriendlyName(folderName)}/${file.replace('.md', '')}`
-  }))
+  const urlFriendlyDir = getUrlFriendlyName(folderName)
+  
+  const items = files.map((file: string) => {
+    const fileName = file.replace('.md', '')
+    return {
+      text: fileName,
+      link: `/ai/${urlFriendlyDir}/${fileName}`
+    }
+  })
 
   return [
     {

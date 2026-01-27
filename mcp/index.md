@@ -11,52 +11,52 @@ title: MCP
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Context7 mcp">Context7 mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/Context7 mcp">Context7 mcp</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./MCP 大全">MCP 大全</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/MCP 大全">MCP 大全</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Mastergo MCP">Mastergo MCP</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/Mastergo MCP">Mastergo MCP</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Playwright MCP">Playwright MCP</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/Playwright MCP">Playwright MCP</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./chrome dev tools mcp">chrome dev tools mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/chrome dev tools mcp">chrome dev tools mcp</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./figma mcp">figma mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/figma mcp">figma mcp</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./发布网页的mcp">发布网页的mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/发布网页的mcp">发布网页的mcp</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./搭建天气预报mcp">搭建天气预报mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/搭建天气预报mcp">搭建天气预报mcp</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./蓝湖mcp">蓝湖mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/蓝湖mcp">蓝湖mcp</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./飞书mcp">飞书mcp</a>
+      <a href="/Awesome-AI-Pedia/ai/mcp/飞书mcp">飞书mcp</a>
     </div>
   </div>
 </div>

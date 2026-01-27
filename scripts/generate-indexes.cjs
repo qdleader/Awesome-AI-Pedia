@@ -36,8 +36,22 @@ const nameMap = {
   '开发ai应用相关问题': '开发AI应用'
 };
 
+// URL 友好名称映射
+const urlMap = {
+  'claudeCode': 'claudecode',
+  '好的rules': 'hao-de-rules',
+  '常用skills': 'chang-yong-skills',
+  '部署ai': 'bu-shu-ai',
+  '使用ai技巧': 'shi-yong-ai-ji-qiao',
+  '开发ai应用相关问题': 'kai-fa-ai-ying-yong'
+};
+
 function getDisplayName(dir) {
   return nameMap[dir] || dir;
+}
+
+function getUrlFriendlyName(dir) {
+  return urlMap[dir] || dir.toLowerCase();
 }
 
 function generateIndex() {
@@ -49,6 +63,7 @@ function generateIndex() {
         .sort();
 
       const displayName = getDisplayName(dir);
+      const urlFriendlyName = getUrlFriendlyName(dir);
       
       let content = `---
 layout: doc
@@ -64,10 +79,11 @@ title: ${displayName}
 
       files.forEach(file => {
         const title = file.replace('.md', '');
+        // 使用绝对路径，确保链接正确
         content += `
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./${title}">${title}</a>
+      <a href="/Awesome-AI-Pedia/ai/${urlFriendlyName}/${title}">${title}</a>
     </div>
   </div>`;
       });

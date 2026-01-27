@@ -11,52 +11,52 @@ title: Rules
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Claude+Cursor高级提示词">Claude+Cursor高级提示词</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/Claude+Cursor高级提示词">Claude+Cursor高级提示词</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Expo React Native TypeScript Cursor Rules">Expo React Native TypeScript Cursor Rules</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/Expo React Native TypeScript Cursor Rules">Expo React Native TypeScript Cursor Rules</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Flutter Cursor Rules">Flutter Cursor Rules</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/Flutter Cursor Rules">Flutter Cursor Rules</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./HTML and CSS Best Practices">HTML and CSS Best Practices</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/HTML and CSS Best Practices">HTML and CSS Best Practices</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Next.js React TypeScript Cursor Rules">Next.js React TypeScript Cursor Rules</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/Next.js React TypeScript Cursor Rules">Next.js React TypeScript Cursor Rules</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./NuxtJS Vue TypeScript Development Rules">NuxtJS Vue TypeScript Development Rules</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/NuxtJS Vue TypeScript Development Rules">NuxtJS Vue TypeScript Development Rules</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./Vue.js TypeScript Best Practices">Vue.js TypeScript Best Practices</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/Vue.js TypeScript Best Practices">Vue.js TypeScript Best Practices</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./cursor rules">cursor rules</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/cursor rules">cursor rules</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./springboot">springboot</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/springboot">springboot</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./如何使用rules">如何使用rules</a>
+      <a href="/Awesome-AI-Pedia/ai/rules/如何使用rules">如何使用rules</a>
     </div>
   </div>
 </div>

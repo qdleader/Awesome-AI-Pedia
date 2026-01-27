@@ -11,22 +11,22 @@ title: Skills
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./MCP与skills的区别">MCP与skills的区别</a>
+      <a href="/Awesome-AI-Pedia/ai/skills/MCP与skills的区别">MCP与skills的区别</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./my-skill-brand">my-skill-brand</a>
+      <a href="/Awesome-AI-Pedia/ai/skills/my-skill-brand">my-skill-brand</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./什么是skills">什么是skills</a>
+      <a href="/Awesome-AI-Pedia/ai/skills/什么是skills">什么是skills</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="./安装skills">安装skills</a>
+      <a href="/Awesome-AI-Pedia/ai/skills/安装skills">安装skills</a>
     </div>
   </div>
 </div>
