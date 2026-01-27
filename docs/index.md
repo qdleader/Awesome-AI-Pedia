@@ -387,10 +387,10 @@ hero:
 }
 
 /* 暗黑模式适配 */
-.dark .parallax > use:nth-child(1) { fill: rgba(30, 30, 30, 0.7); }
-.dark .parallax > use:nth-child(2) { fill: rgba(30, 30, 30, 0.5); }
-.dark .parallax > use:nth-child(3) { fill: rgba(30, 30, 30, 0.3); }
-.dark .parallax > use:nth-child(4) { fill: rgba(30, 30, 30, 1.0); } /* 匹配页面背景色 */
+.dark .parallax > use:nth-child(1) { fill: rgba(180, 225, 255, 0.3); } /* 降低不透明度适配暗黑模式 */
+.dark .parallax > use:nth-child(2) { fill: rgba(180, 225, 255, 0.2); }
+.dark .parallax > use:nth-child(3) { fill: rgba(180, 225, 255, 0.1); }
+.dark .parallax > use:nth-child(4) { fill: rgba(180, 225, 255, 0.4); }
 
 /* Features 卡片美化 */
 :root .VPFeature {
@@ -960,5 +960,55 @@ hero:
 
 .dark .nav-card:hover::before {
   opacity: 0.1;
+}
+
+/* ========================================
+   动态标题样式 (Dynamic Title)
+   ======================================== */
+:root .VPHero .name,
+:root .VPHero .text {
+  background: linear-gradient(
+    315deg,
+    #42d392 0%,
+    #647eff 25%,
+    #ff64bc 50%,
+    #fccf3e 75%,
+    #42d392 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientTitle 30s linear infinite;
+  padding-bottom: 2px; /* Prevent clipping of descenders */
+  /* Ensure hardware acceleration for smoother animation */
+  will-change: background-position;
+}
+
+@keyframes gradientTitle {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 适配暗黑模式 - 颜色更亮丽 */
+.dark .VPHero .name,
+.dark .VPHero .text {
+   background: linear-gradient(
+    315deg,
+    #4ddc9e 0%,
+    #7a8fff 25%,
+    #ff85c9 50%,
+    #fde047 75%,
+    #4ddc9e 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
