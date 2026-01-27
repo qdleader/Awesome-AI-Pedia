@@ -67,10 +67,10 @@ hero:
       <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
     </defs>
     <g class="parallax">
-      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
-      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,1.0)" />
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(180,225,255,0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(180,225,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(180,225,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(180,225,255,1.0)" />
     </g>
   </svg>
 </div>
@@ -331,22 +331,66 @@ hero:
   margin-top: -1px;
 }
 
-.wave-divider svg {
+.wave-divider {
   position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 100px;
-  animation: waveMove 8s ease-in-out infinite;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 120px;
+  background: transparent;
+  margin-bottom: -1px; /* 防止缝隙 */
+  overflow: hidden;
 }
 
-@keyframes waveMove {
-  0%, 100% {
-    transform: translateX(0);
+.waves {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  bottom: 0px; 
+  left: 0;
+}
+
+/* 视差动画 */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
   }
-  50% {
-    transform: translateX(-20px);
+  100% { 
+    transform: translate3d(85px,0,0);
   }
 }
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .waves {
+    height: 60px;
+  }
+}
+
+/* 暗黑模式适配 */
+.dark .parallax > use:nth-child(1) { fill: rgba(30, 30, 30, 0.7); }
+.dark .parallax > use:nth-child(2) { fill: rgba(30, 30, 30, 0.5); }
+.dark .parallax > use:nth-child(3) { fill: rgba(30, 30, 30, 0.3); }
+.dark .parallax > use:nth-child(4) { fill: rgba(30, 30, 30, 1.0); } /* 匹配页面背景色 */
 
 /* Features 卡片美化 */
 :root .VPFeature {
