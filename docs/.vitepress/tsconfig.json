@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInInFileNames": true,
+    "types": ["node"]
+  },
+  "include": ["**/*.ts", "**/*.d.ts"],
+  "exclude": ["../dist", "../cache"]
+}

@@ -1,155 +1,8 @@
 import { defineConfig } from 'vitepress'
-import { glob } from 'glob'
-import matter from 'gray-matter'
-import path from 'path'
-import fs from 'fs'
+import type { DefaultTheme } from 'vitepress'
+import { generateAISidebar, generateDynamicSidebar, generateNav, getDisplayName, getUrlFriendlyName, getMarkdownFiles, getProjectRoot } from './utils/sidebar.js'
 
-// 获取目录下的所有markdown文件
-function getMarkdownFiles(dirPath) {
-  const files = []
-  if (fs.existsSync(dirPath)) {
-    const items = fs.readdirSync(dirPath, { withFileTypes: true })
-    items.forEach(item => {
-      if (item.isFile() && item.name.endsWith('.md')) {
-        files.push(item.name)
-      }
-    })
-  }
-  return files.sort()
-}
-
-// 生成AI知识库侧边栏
-function generateAISidebar() {
-  const aiBase = path.join(__dirname, '../ai')
-  const categories = []
-
-  if (!fs.existsSync(aiBase)) {
-    return []
-  }
-
-  const dirs = fs.readdirSync(aiBase, { withFileTypes: true })
-    .filter(d => d.isDirectory())
-    .map(d => d.name)
-    .sort()
-
-  dirs.forEach(dir => {
-    const dirPath = path.join(aiBase, dir)
-    const files = getMarkdownFiles(dirPath)
-
-    if (files.length > 0) {
-      const items = files.map(file => ({
-        text: file.replace('.md', ''),
-        link: `/ai/${dir}/${file.replace('.md', '')}`
-      }))
-
-      // 使用中文目录名
-      const displayName = getDisplayName(dir)
-
-      categories.push({
-        text: displayName,
-        collapsed: false,
-        items
-      })
-    }
-  })
-
-  return categories
-}
-
-// 获取中文显示名称
-function getDisplayName(dir: string): string {
-  const nameMap: Record<string, string> = {
-    'claudecode': 'Claude Code',
-    'claudeCode': 'Claude Code',
-    'cursor': 'Cursor',
-    'mcp': 'MCP',
-    'prompt': 'Prompt',
-    'rules': 'Rules',
-    'skills': 'Skills',
-    'hao-de-rules': '好的Rules',
-    '好的rules': '好的Rules',
-    'chang-yong-skills': '常用Skills',
-    '常用skills': '常用Skills',
-    'bu-shu-ai': '部署AI',
-    '部署ai': '部署AI',
-    'shi-yong-ai-ji-qiao': '使用AI技巧',
-    '使用ai技巧': '使用AI技巧',
-    'kai-fa-ai-ying-yong': '开发AI应用',
-    '开发ai应用相关问题': '开发AI应用'
-  }
-  return nameMap[dir] || dir
-}
-
-// 动态生成侧边栏
-function generateDynamicSidebar(folderName: string) {
-  const folderPath = path.join(__dirname, '../..', folderName)
-  const files = getMarkdownFiles(folderPath)
-
-  if (files.length === 0) {
-    return []
-  }
-
-  const items = files.map(file => ({
-    text: file.replace('.md', ''),
-    link: `/${getUrlFriendlyName(folderName)}/${file.replace('.md', '')}`
-  }))
-
-  return [
-    {
-      text: getDisplayName(folderName),
-      collapsed: false,
-      items
-    }
-  ]
-}
-
-// 获取URL友好的路径名
-function getUrlFriendlyName(dir: string): string {
-  const urlMap: Record<string, string> = {
-    'claudeCode': 'claudecode',
-    '好的rules': 'hao-de-rules',
-    '常用skills': 'chang-yong-skills',
-    '部署ai': 'bu-shu-ai',
-    '使用ai技巧': 'shi-yong-ai-ji-qiao',
-    '开发ai应用相关问题': 'kai-fa-ai-ying-yong'
-  }
-  return urlMap[dir] || dir.toLowerCase()
-}
-
-// 动态生成顶部导航栏
-function generateNav() {
-  const rootDir = path.join(__dirname, '../..')
-  const navItems: Array<{ text: string; link: string }> = [
-    { text: '首页', link: '/' }
-  ]
-
-  const excludedDirs = [
-    'node_modules',
-    'docs',
-    'scripts',
-    '.git', // Exclude .git directory
-    '.vitepress', // Exclude .vitepress directory (if it somehow appears at root)
-    '.github', // Exclude .github directory
-    'public' // Exclude public directory
-  ]
-
-  const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })
-
-  const contentDirs = allRootItems
-    .filter(item => item.isDirectory() && !excludedDirs.includes(item.name))
-    .map(item => item.name)
-    .sort()
-
-  contentDirs.forEach(dir => {
-    const urlPath = getUrlFriendlyName(dir)
-    navItems.push({
-      text: getDisplayName(dir),
-      link: `/${urlPath}/` // Link directly to the root-level folder
-    })
-  })
-
-  return navItems
-}
+const projectRoot = getProjectRoot();
 
 export default defineConfig({
   title: 'Awesome AI Pedia',
@@ -165,12 +18,12 @@ export default defineConfig({
   // 主题配置
   themeConfig: {
     // 导航栏 - 动态生成
-    nav: generateNav(),
+    nav: generateNav(projectRoot),
 
     // 侧边栏
     sidebar: (() => {
-      const sidebar = {
-        '/ai/': generateAISidebar(),
+      const sidebar: DefaultTheme.Sidebar = {
+        '/ai/': generateAISidebar(projectRoot),
         '/blog/': [
           {
             text: '📚 博客文章',
@@ -195,26 +48,11 @@ export default defineConfig({
         ]
       }
 
-      const rootDir = path.join(__dirname, '../..')
-      const excludedDirs = [
-        'node_modules',
-        'docs',
-        'scripts',
-        '.git',
-        '.vitepress',
-        '.github',
-        'public'
-      ]
+      const contentDirs = generateNav(projectRoot).slice(1).map((navItem: any) => getUrlFriendlyName(navItem.text))
 
-      const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })
-      const contentDirs = allRootItems
-        .filter(item => item.isDirectory() && !excludedDirs.includes(item.name))
-        .map(item => item.name)
-        .sort()
-
-      contentDirs.forEach(dir => {
+      contentDirs.forEach((dir: any) => {
         const urlPath = getUrlFriendlyName(dir)
-        sidebar[`/${urlPath}/`] = generateDynamicSidebar(dir)
+        sidebar[`/ai/${urlPath}/`] = generateDynamicSidebar(dir, projectRoot)
       })
       return sidebar
     })(),
@@ -253,20 +91,21 @@ export default defineConfig({
       provider: 'local'
     },
 
-    // 自定义主题色
-    darkModeSearchPlaceholder: '搜索...',
-    lightModeSearchPlaceholder: '搜索...'
   },
 
   // Vite配置
   vite: {
+    build: {
+      outDir: '../dist',
+      assetsDir: 'assets'
+    },
     server: {
       port: 3000,
       open: true
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './docs')
+        '@': `${projectRoot}/docs`
       }
     }
   },
@@ -278,12 +117,6 @@ export default defineConfig({
     config(md) {
       // 添加自定义markdown插件
     }
-  },
-
-  // 构建配置
-  build: {
-    outDir: '../dist',
-    assetsDir: 'assets'
   },
 
   // 本地开发服务器
