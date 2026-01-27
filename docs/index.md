@@ -61,37 +61,37 @@ features:
 <div class="blog-card">
   <div class="blog-card-title">🤖 Claude Code</div>
   <div class="blog-card-desc">Claude AI编码助手的使用技巧和配置</div>
-  <a href="/ai/claudecode/" class="blog-card-link">查看 →</a>
+  <a href="/Awesome-AI-Pedia/ai/claudecode/" class="blog-card-link">查看 →</a>
 </div>
 
 <div class="blog-card">
   <div class="blog-card-title">🎯 Cursor</div>
   <div class="blog-card-desc">Cursor AI编辑器的使用方法和最佳实践</div>
-  <a href="/ai/cursor/" class="blog-card-link">查看 →</a>
+  <a href="/Awesome-AI-Pedia/ai/cursor/" class="blog-card-link">查看 →</a>
 </div>
 
 <div class="blog-card">
   <div class="blog-card-title">💬 Prompt</div>
   <div class="blog-card-desc">提示词工程和优化技巧</div>
-  <a href="/ai/prompt/" class="blog-card-link">查看 →</a>
+  <a href="/Awesome-AI-Pedia/ai/prompt/" class="blog-card-link">查看 →</a>
 </div>
 
 <div class="blog-card">
   <div class="blog-card-title">🔌 MCP</div>
   <div class="blog-card-desc">模型上下文协议相关资源</div>
-  <a href="/ai/mcp/" class="blog-card-link">查看 →</a>
+  <a href="/Awesome-AI-Pedia/ai/mcp/" class="blog-card-link">查看 →</a>
 </div>
 
 <div class="blog-card">
   <div class="blog-card-title">📋 Rules</div>
   <div class="blog-card-desc">各种AI编码规则和最佳实践</div>
-  <a href="/ai/rules/" class="blog-card-link">查看 →</a>
+  <a href="/Awesome-AI-Pedia/ai/rules/" class="blog-card-link">查看 →</a>
 </div>
 
 <div class="blog-card">
   <div class="blog-card-title">🛠️ Skills</div>
   <div class="blog-card-desc">AI技能集合和实用工具</div>
-  <a href="/ai/skills/" class="blog-card-link">查看 →</a>
+  <a href="/Awesome-AI-Pedia/ai/skills/" class="blog-card-link">查看 →</a>
 </div>
 
 </div>
