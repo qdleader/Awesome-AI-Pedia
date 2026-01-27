@@ -80,6 +80,29 @@ function getDisplayName(dir: string): string {
   return nameMap[dir] || dir
 }
 
+// 动态生成侧边栏
+function generateDynamicSidebar(folderName: string) {
+  const folderPath = path.join(__dirname, '../..', folderName)
+  const files = getMarkdownFiles(folderPath)
+
+  if (files.length === 0) {
+    return []
+  }
+
+  const items = files.map(file => ({
+    text: file.replace('.md', ''),
+    link: `/${getUrlFriendlyName(folderName)}/${file.replace('.md', '')}`
+  }))
+
+  return [
+    {
+      text: getDisplayName(folderName),
+      collapsed: false,
+      items
+    }
+  ]
+}
+
 // 获取URL友好的路径名
 function getUrlFriendlyName(dir: string): string {
   const urlMap: Record<string, string> = {
@@ -100,30 +123,29 @@ function generateNav() {
     { text: '首页', link: '/' }
   ]
 
-  // 需要展示在导航栏的文件夹列表（按显示顺序）
-  const contentDirs = [
-    'claudeCode',
-    'cursor', 
-    'mcp',
-    'prompt',
-    'rules',
-    'skills',
-    '好的rules',
-    '常用skills',
-    '部署ai',
-    '使用ai技巧',
-    '开发ai应用相关问题'
+  const excludedDirs = [
+    'node_modules',
+    'docs',
+    'scripts',
+    '.git', // Exclude .git directory
+    '.vitepress', // Exclude .vitepress directory (if it somehow appears at root)
+    '.github', // Exclude .github directory
+    'public' // Exclude public directory
   ]
 
+  const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })
+
+  const contentDirs = allRootItems
+    .filter(item => item.isDirectory() && !excludedDirs.includes(item.name))
+    .map(item => item.name)
+    .sort()
+
   contentDirs.forEach(dir => {
-    const dirPath = path.join(rootDir, dir)
-    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
-      const urlPath = getUrlFriendlyName(dir)
-      navItems.push({
-        text: getDisplayName(dir),
-        link: `/ai/${urlPath}/`
-      })
-    }
+    const urlPath = getUrlFriendlyName(dir)
+    navItems.push({
+      text: getDisplayName(dir),
+      link: `/${urlPath}/` // Link directly to the root-level folder
+    })
   })
 
   return navItems
@@ -146,31 +168,56 @@ export default defineConfig({
     nav: generateNav(),
 
     // 侧边栏
-    sidebar: {
-      '/ai/': generateAISidebar(),
-      '/blog/': [
-        {
-          text: '📚 博客文章',
-          collapsed: false,
-          items: [
-            { text: 'AI开发实践', link: '/blog/ai-development/' },
-            { text: '智能助手配置', link: '/blog/ai-assistant/' },
-            { text: 'VitePress使用指南', link: '/blog/vitepress-guide/' }
-          ]
-        }
-      ],
-      '/guide/': [
-        {
-          text: '📖 使用指南',
-          collapsed: false,
-          items: [
-            { text: '快速开始', link: '/guide/getting-started/' },
-            { text: '目录结构说明', link: '/guide/directory/' },
-            { text: '部署指南', link: '/guide/deployment/' }
-          ]
-        }
+    sidebar: (() => {
+      const sidebar = {
+        '/ai/': generateAISidebar(),
+        '/blog/': [
+          {
+            text: '📚 博客文章',
+            collapsed: false,
+            items: [
+              { text: 'AI开发实践', link: '/blog/ai-development/' },
+              { text: '智能助手配置', link: '/blog/ai-assistant/' },
+              { text: 'VitePress使用指南', link: '/blog/vitepress-guide/' }
+            ]
+          }
+        ],
+        '/guide/': [
+          {
+            text: '📖 使用指南',
+            collapsed: false,
+            items: [
+              { text: '快速开始', link: '/guide/getting-started/' },
+              { text: '目录结构说明', link: '/guide/directory/' },
+              { text: '部署指南', link: '/guide/deployment/' }
+            ]
+          }
+        ]
+      }
+
+      const rootDir = path.join(__dirname, '../..')
+      const excludedDirs = [
+        'node_modules',
+        'docs',
+        'scripts',
+        '.git',
+        '.vitepress',
+        '.github',
+        'public'
       ]
-    },
+
+      const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })
+      const contentDirs = allRootItems
+        .filter(item => item.isDirectory() && !excludedDirs.includes(item.name))
+        .map(item => item.name)
+        .sort()
+
+      contentDirs.forEach(dir => {
+        const urlPath = getUrlFriendlyName(dir)
+        sidebar[`/${urlPath}/`] = generateDynamicSidebar(dir)
+      })
+      return sidebar
+    })(),
 
     // 社交链接
     socialLinks: [
