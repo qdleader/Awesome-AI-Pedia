@@ -3,4 +3,8 @@
 ## 1. 
 点击右上角头像，选择Quick Settings Panel 
 
-Auto Execution 
+Auto Execution --> Always Proceed
+
+Review Policy --> Always Proceed
+
+或者 在Customizations 设置自定义允许的命令
