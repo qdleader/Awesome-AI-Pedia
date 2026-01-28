@@ -1,9 +1,9 @@
 ---
 layout: doc
-title: 图片
+title: MoltBot
 ---
 
-# 图片
+# MoltBot
 
 本分类包含以下内容：
 
@@ -11,7 +11,12 @@ title: 图片
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="/Awesome-AI-Pedia/ai/prompt/图片/生成ppt图片">生成ppt图片</a>
+      <a href="/ai/moltbot/moltbot-介绍">moltbot 介绍</a>
+    </div>
+  </div>
+  <div class="article-item">
+    <div class="article-item-title">
+      <a href="/ai/moltbot/moltbot-安装">moltbot 安装</a>
     </div>
   </div>
 </div>
