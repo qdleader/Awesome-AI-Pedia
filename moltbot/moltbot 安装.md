@@ -27,11 +27,12 @@ clawdbot onboard
 如果你不想使用 CLI 引导，可以手动运行：
 
 clawdbot setup
+
 clawdbot gateway
 启动本地 Gateway 后，Clawdbot 的本地控制面板通常会在浏览器打开：
-
+```js
 http://127.0.0.1:18789
-
+```
 
 ## 初始配置
 

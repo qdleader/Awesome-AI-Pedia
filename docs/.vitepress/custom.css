@@ -145,6 +145,71 @@
   background: var(--vp-c-brand-dark);
 }
 
+/* 顶部导航栏布局优化 */
+.VPNav .VPNavBar .content .content-body {
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* 导航菜单可滚动 */
+.VPNav .VPNavBar .content .content-body .VPNavBarMenu {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+
+.VPNav .VPNavBar .content .content-body .VPNavBarMenuGroup,
+.VPNav .VPNavBar .content .content-body .VPNavBarMenuLink {
+  flex-shrink: 0;
+}
+
+/* GitHub社交链接固定在右侧 */
+.VPNav .VPNavBar .content .content-body .VPNavBarSocialLinks {
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  position: relative !important;
+  z-index: 10 !important;
+  background: var(--vp-c-bg) !important;
+  padding-left: 1rem !important;
+}
+
+/* 确保社交链接不被滚动遮挡 */
+.VPNav .VPNavBar .content .content-body .VPNavBarSocialLinks::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, transparent, var(--vp-c-bg));
+  pointer-events: none;
+}
+
+/* 导航栏滚动条样式 */
+.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar {
+  height: 4px;
+}
+
+.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand);
+  border-radius: 2px;
+}
+
+.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-dark);
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .blog-grid {

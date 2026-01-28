@@ -1,52 +1,6 @@
 <template>
   <div class="panda-container">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        /* 探头动画 (Peekaboo) */
-        .head-group {
-            animation: peek 6s ease-in-out infinite;
-            transform-origin: bottom center;
-        }
-
-        @keyframes peek {
-            0%, 100% { transform: translateY(60px); }
-            20%, 80% { transform: translateY(0); }
-        }
-
-        /* 眼球转动动画 (Look Around) */
-        .pupils {
-            animation: curious-eyes 6s ease-in-out infinite;
-        }
-
-        @keyframes curious-eyes {
-            0%, 25%, 75%, 100% { transform: translate(0, 0); }
-            35%, 45% { transform: translate(2px, -1px); }
-            55%, 65% { transform: translate(-2px, -1px); }
-        }
-
-        /* 耳朵轻微扇动 */
-        .ear {
-            animation: ear-shake 6s ease-in-out infinite;
-        }
-        .ear-left { transform-origin: 35px 40px; }
-        .ear-right { transform-origin: 85px 40px; animation-delay: 0.2s; }
-
-        @keyframes ear-shake {
-            0%, 25%, 75%, 100% { transform: rotate(0deg); }
-            30%, 70% { transform: rotate(-5deg); }
-        }
-
-        /* 爪子动画 */
-        .paw {
-            animation: paw-move 6s ease-in-out infinite;
-        }
-
-        @keyframes paw-move {
-            0%, 100% { transform: translateY(40px); }
-            20%, 80% { transform: translateY(0); }
-        }
-    </style>
-
     <defs>
         <linearGradient id="panda-grad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#2c2c2e"></stop>
@@ -116,5 +70,49 @@
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 20px;
+}
+
+/* 探头动画 (Peekaboo) */
+:deep(.head-group) {
+  animation: peek 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes peek {
+  0%, 100% { transform: translateY(60px); }
+  20%, 80% { transform: translateY(0); }
+}
+
+/* 眼球转动动画 (Look Around) */
+:deep(.pupils) {
+  animation: curious-eyes 6s ease-in-out infinite;
+}
+
+@keyframes curious-eyes {
+  0%, 25%, 75%, 100% { transform: translate(0, 0); }
+  35%, 45% { transform: translate(2px, -1px); }
+  55%, 65% { transform: translate(-2px, -1px); }
+}
+
+/* 耳朵轻微扇动 */
+:deep(.ear) {
+  animation: ear-shake 6s ease-in-out infinite;
+}
+:deep(.ear-left) { transform-origin: 35px 40px; }
+:deep(.ear-right) { transform-origin: 85px 40px; animation-delay: 0.2s; }
+
+@keyframes ear-shake {
+  0%, 25%, 75%, 100% { transform: rotate(0deg); }
+  30%, 70% { transform: rotate(-5deg); }
+}
+
+/* 爪子动画 */
+:deep(.paw) {
+  animation: paw-move 6s ease-in-out infinite;
+}
+
+@keyframes paw-move {
+  0%, 100% { transform: translateY(40px); }
+  20%, 80% { transform: translateY(0); }
 }
 </style>
