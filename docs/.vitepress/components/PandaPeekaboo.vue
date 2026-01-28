@@ -1,5 +1,6 @@
 <template>
-<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div>
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         /* 探头动画 (Peekaboo) */
         .head-group {
@@ -105,4 +106,6 @@
         <circle cx="92" cy="90" r="6" fill="#ffb6c1" opacity="0.5"></circle>
     </g>
 </svg>
+  </div>
+
 </template>
