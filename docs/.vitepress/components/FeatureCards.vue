@@ -7,7 +7,7 @@
       target="_blank" 
       class="feature-card"
     >
-      <div class="feature-icon">{{ feature.icon }}</div>
+<div class="feature-icon" v-html="feature.icon"></div>
       <h3 class="feature-title">{{ feature.title }}</h3>
       <p class="feature-desc">{{ feature.description }}</p>
       <div class="feature-hover-bg"></div>
@@ -18,19 +18,19 @@
 <script setup lang="ts">
 const features = [
   {
-    icon: '📚',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>`, // Library/Book
     title: '11个AI分类',
     description: '涵盖Claude Code、Cursor、MCP、Prompt、Rules等全方位AI知识',
     link: 'https://github.com/qdleader/Awesome-AI-Pedia'
   },
   {
-    icon: '🚀',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`, // Rocket
     title: '现代化技术栈',
     description: '基于VitePress构建,支持Markdown、代码高亮、暗黑模式',
     link: 'https://github.com/qdleader/Awesome-AI-Pedia'
   },
   {
-    icon: '💡',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2 1.5-3.5 0-2.2-1.8-4-4-4s-4 1.8-4 4c0 1.5.5 2.5 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`, // Lightbulb
     title: '实战经验分享',
     description: '从实际项目出发,提供可落地的解决方案',
     link: 'https://github.com/qdleader/Awesome-AI-Pedia'
@@ -78,10 +78,14 @@ const features = [
 /* Feature 图标 */
 .feature-icon {
   font-size: 3.5rem;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
   margin-bottom: 1.5rem;
   animation: breathe 3s ease-in-out infinite;
   filter: drop-shadow(0 4px 8px rgba(100, 108, 255, 0.2));
   transition: all 0.4s ease;
+  color: var(--vp-c-brand-1);
 }
 
 .feature-card:hover .feature-icon {

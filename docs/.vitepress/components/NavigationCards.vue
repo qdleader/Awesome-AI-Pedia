@@ -6,7 +6,7 @@
       class="nav-card" 
       :data-category="card.category"
     >
-      <div class="nav-card-icon">{{ card.icon }}</div>
+<div class="nav-card-icon" v-html="card.icon"></div>
       <div class="nav-card-content">
         <h3 class="nav-card-title">{{ card.title }}</h3>
         <p class="nav-card-desc">{{ card.description }}</p>
@@ -26,42 +26,42 @@
 const navigationCards = [
   {
     category: 'claudecode',
-    icon: '🤖',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>`, // Robot/Bot
     title: 'Claude Code',
     description: 'Claude AI编码助手的使用技巧和配置',
     link: '/Awesome-AI-Pedia/ai/claudecode/'
   },
   {
     category: 'cursor',
-    icon: '🎯',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>`, // Cursor/Arrow
     title: 'Cursor',
     description: 'Cursor AI编辑器的使用方法和最佳实践',
     link: '/Awesome-AI-Pedia/ai/cursor/'
   },
   {
     category: 'prompt',
-    icon: '💬',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`, // Message/Chat
     title: 'Prompt',
     description: '提示词工程和优化技巧',
     link: '/Awesome-AI-Pedia/ai/prompt/'
   },
   {
     category: 'mcp',
-    icon: '🔌',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m7.8 16.2-2.9 2.9"/><path d="M2 12h4"/><path d="m7.8 7.8-2.9-2.9"/><circle cx="12" cy="12" r="3"/></svg>`, // Hub/Connection/MCP
     title: 'MCP',
     description: '模型上下文协议相关资源',
     link: '/Awesome-AI-Pedia/ai/mcp/'
   },
   {
     category: 'rules',
-    icon: '📋',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`, // File/Rules
     title: 'Rules',
     description: '各种AI编码规则和最佳实践',
     link: '/Awesome-AI-Pedia/ai/rules/'
   },
   {
     category: 'skills',
-    icon: '🛠️',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`, // Wrench/Tool
     title: 'Skills',
     description: 'AI技能集合和实用工具',
     link: '/Awesome-AI-Pedia/ai/skills/'
@@ -140,11 +140,14 @@ const navigationCards = [
 .nav-card-icon {
   position: relative;
   font-size: 3.5rem;
+  width: 1em;
+  height: 1em;
   margin-bottom: 1.5rem;
   display: inline-block;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
   filter: grayscale(0.3);
+  color: var(--vp-c-brand-1); /* Ensure icons have color */
 }
 
 .nav-card:hover .nav-card-icon {
