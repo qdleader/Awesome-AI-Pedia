@@ -147,67 +147,77 @@
 
 /* 顶部导航栏布局优化 */
 .VPNav .VPNavBar .content .content-body {
-  overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
-  gap: 1rem !important;
+  gap: 0.5rem !important;
 }
 
-/* 导航菜单可滚动 */
-.VPNav .VPNavBar .content .content-body .VPNavBarMenu {
-  flex: 1 1 0% !important;
-  min-width: 0 !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  white-space: nowrap !important;
-  display: flex !important;
-  scrollbar-width: thin;
-  -ms-overflow-style: auto;
+/* 超大屏幕（2K/4K）：最大化利用空间，显示更多导航项 */
+@media (min-width: 2560px) {
+  .VPNav .VPNavBar .content .content-body {
+    gap: 1rem !important;
+  }
+
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuLink,
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuGroup {
+    padding: 0 1rem !important;
+    font-size: 1rem !important;
+  }
 }
 
-.VPNav .VPNavBar .content .content-body .VPNavBarMenuGroup,
-.VPNav .VPNavBar .content .content-body .VPNavBarMenuLink {
-  flex-shrink: 0;
+/* 大屏幕（1920px）：宽松间距 */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .VPNav .VPNavBar .content .content-body {
+    gap: 0.75rem !important;
+  }
+
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuLink,
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuGroup {
+    padding: 0 0.75rem !important;
+  }
+}
+
+/* 标准屏幕（1280px-1919px）：标准间距 */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuLink,
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuGroup {
+    padding: 0 0.6rem !important;
+  }
+}
+
+/* 笔记本屏幕（960px-1279px）：紧凑布局 */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuLink,
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuGroup {
+    padding: 0 0.4rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .VPNav .VPNavBar .content .content-body {
+    gap: 0.3rem !important;
+  }
+}
+
+/* 平板屏幕（768px-959px）：更紧凑 */
+@media (max-width: 959px) {
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuLink,
+  .VPNav .VPNavBar .content .content-body .VPNavBarMenu .VPNavBarMenuGroup {
+    padding: 0 0.3rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .VPNav .VPNavBar .content .content-body {
+    gap: 0.2rem !important;
+  }
 }
 
 /* GitHub社交链接固定在右侧 */
-.VPNav .VPNavBar .content .content-body .VPNavBarSocialLinks {
+.VPNav .VPNavBar .content .content-body > .VPNavBarSocialLinks {
   flex-shrink: 0 !important;
-  margin-left: auto !important;
+  flex: 0 0 auto !important;
   position: relative !important;
   z-index: 10 !important;
-  background: var(--vp-c-bg) !important;
-  padding-left: 1rem !important;
-}
-
-/* 确保社交链接不被滚动遮挡 */
-.VPNav .VPNavBar .content .content-body .VPNavBarSocialLinks::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  background: linear-gradient(to right, transparent, var(--vp-c-bg));
-  pointer-events: none;
-}
-
-/* 导航栏滚动条样式 */
-.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar {
-  height: 4px;
-}
-
-.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar-thumb {
-  background: var(--vp-c-brand);
-  border-radius: 2px;
-}
-
-.VPNav .VPNavBar .content .content-body .VPNavBarMenu::-webkit-scrollbar-thumb:hover {
-  background: var(--vp-c-brand-dark);
+  margin-left: auto !important;
 }
 
 /* 响应式设计 */

@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "prebuild": "node scripts/copy-symlinks.js",
-    "build": "vitepress build docs",
-    "serve": "vitepress preview docs"
+    "build": "node scripts/fix-config.js && vitepress build docs",
+    "serve": "vitepress preview docs",
+    "check-config": "node scripts/check-config.js",
+    "fix-config": "node scripts/fix-config.js"
   },
   "dependencies": {
     "vitepress": "^1.3.4",

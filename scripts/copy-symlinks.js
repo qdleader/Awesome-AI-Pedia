@@ -10,6 +10,7 @@ const aiDir = path.join(projectRoot, 'docs', 'ai')
 
 // 符号链接映射
 const symlinkMap = {
+  'antigravity': 'antigravity',
   'bu-shu-ai': '部署ai',
   'chang-yong-skills': '常用skills',
   'claudecode': 'claudeCode',
@@ -17,10 +18,12 @@ const symlinkMap = {
   'hao-de-rules': '好的rules',
   'kai-fa-ai-ying-yong': '开发ai应用相关问题',
   'mcp': 'mcp',
+  'moltbot': 'moltbot',
   'prompt': 'prompt',
   'rules': 'rules',
   'shi-yong-ai-ji-qiao': '使用ai技巧',
-  'skills': 'skills'
+  'skills': 'skills',
+  'bu-ke-bu-zhi-de-ai-zhi-shi': '不可不知的Ai知识'
 }
 
 console.log('🔗 开始处理符号链接...\n')

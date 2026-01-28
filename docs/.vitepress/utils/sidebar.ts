@@ -23,10 +23,12 @@ export function getMarkdownFiles(dirPath: string): string[] {
 // 获取中文显示名称
 export function getDisplayName(dir: string): string {
   const nameMap: Record<string, string> = {
+    'antigravity': 'Antigravity',
     'claudecode': 'Claude Code',
     'claudeCode': 'Claude Code',
     'cursor': 'Cursor',
     'mcp': 'MCP',
+    'moltbot': 'MoltBot',
     'prompt': 'Prompt',
     'rules': 'Rules',
     'skills': 'Skills',
@@ -39,7 +41,9 @@ export function getDisplayName(dir: string): string {
     'shi-yong-ai-ji-qiao': '使用AI技巧',
     '使用ai技巧': '使用AI技巧',
     'kai-fa-ai-ying-yong': '开发AI应用',
-    '开发ai应用相关问题': '开发AI应用'
+    '开发ai应用相关问题': '开发AI应用',
+    'bu-ke-bu-zhi-de-ai-zhi-shi': '不可不知的AI知识',
+    '不可不知的Ai知识': '不可不知的AI知识'
   }
   return nameMap[dir] || dir
 }
@@ -52,7 +56,8 @@ export function getUrlFriendlyName(dir: string): string {
     '常用skills': 'chang-yong-skills',
     '部署ai': 'bu-shu-ai',
     '使用ai技巧': 'shi-yong-ai-ji-qiao',
-    '开发ai应用相关问题': 'kai-fa-ai-ying-yong'
+    '开发ai应用相关问题': 'kai-fa-ai-ying-yong',
+    '不可不知的Ai知识': 'bu-ke-bu-zhi-de-ai-zhi-shi'
   }
   return urlMap[dir] || dir.toLowerCase()
 }
@@ -136,9 +141,7 @@ export function getProjectRoot(): string {
 // 动态生成顶部导航栏
 export function generateNav(baseDir: string) {
   const rootDir = baseDir
-  const navItems: Array<{ text: string; link: string }> = [
-    { text: '首页', link: '/' }
-  ]
+  const navItems: Array<any> = []
 
   const excludedDirs = [
     'node_modules',
@@ -159,6 +162,10 @@ export function generateNav(baseDir: string) {
     .map((item: fs.Dirent) => item.name)
     .sort()
 
+  // 首先添加首页
+  navItems.push({ text: '首页', link: '/' })
+
+  // 添加所有导航项
   contentDirs.forEach((dir: string) => {
     const urlPath = getUrlFriendlyName(dir)
     navItems.push({
@@ -166,6 +173,22 @@ export function generateNav(baseDir: string) {
       link: `/ai/${urlPath}/`
     })
   })
+
+  // 根据导航项总数动态决定是否需要分组
+  // 10个以内：全部平铺显示
+  // 超过10个：前10个平铺，其余放入"更多"菜单
+  if (navItems.length > 10) {
+    const visibleItems = navItems.slice(0, 10)
+    const moreItems = navItems.slice(10)
+
+    return [
+      ...visibleItems,
+      {
+        text: '更多',
+        items: moreItems
+      }
+    ]
+  }
 
   return navItems
 }
