@@ -11,12 +11,12 @@ title: Antigravity
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="/ai/antigravity/antigravity-如何自动accept">antigravity 如何自动accept</a>
+      <a href="/Awesome-AI-Pedia/ai/antigravity/antigravity-如何自动accept">antigravity 如何自动accept</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="/ai/antigravity/antigravity-自动切换账号">antigravity 自动切换账号</a>
+      <a href="/Awesome-AI-Pedia/ai/antigravity/antigravity-自动切换账号">antigravity 自动切换账号</a>
     </div>
   </div>
 </div>
