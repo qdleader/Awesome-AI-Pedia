@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="panda-container">
     <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         /* 探头动画 (Peekaboo) */
@@ -109,3 +109,12 @@
   </div>
 
 </template>
+
+<style scoped>
+.panda-container {
+  width: 180px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+</style>
