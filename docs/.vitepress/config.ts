@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
-import { getProjectRoot, generateNav, generateAISidebar, generateDynamicSidebar, getUrlFriendlyName } from './utils/sidebar'
+import { getProjectRoot, generateNav, generateAISidebar } from './utils/sidebar'
 
 const projectRoot = getProjectRoot()
 
@@ -17,42 +17,31 @@ export default defineConfig({
   themeConfig: {
     nav: generateNav(projectRoot),
 
-    sidebar: (() => {
-      const sidebar: DefaultTheme.Sidebar = {
-        '/ai/': generateAISidebar(projectRoot),
-        '/blog/': [
-          {
-            text: '📚 博客文章',
-            collapsed: false,
-            items: [
-              { text: 'AI开发实践', link: '/blog/ai-development/' },
-              { text: '智能助手配置', link: '/blog/ai-assistant/' },
-              { text: 'VitePress使用指南', link: '/blog/vitepress-guide/' }
-            ]
-          }
-        ],
-        '/guide/': [
-          {
-            text: '📖 使用指南',
-            collapsed: false,
-            items: [
-              { text: '快速开始', link: '/guide/getting-started/' },
-              { text: '目录结构说明', link: '/guide/directory/' },
-              { text: '部署指南', link: '/guide/deployment/' }
-            ]
-          }
-        ]
-      }
-
-      const contentDirs = generateNav(projectRoot).slice(1).map((navItem: any) => getUrlFriendlyName(navItem.text))
-
-      contentDirs.forEach((dir: any) => {
-        const urlPath = getUrlFriendlyName(dir)
-        sidebar[`/ai/${urlPath}/`] = generateDynamicSidebar(dir, projectRoot)
-      })
-
-      return sidebar
-    })(),
+    sidebar: {
+      '/ai/': generateAISidebar(projectRoot),
+      '/blog/': [
+        {
+          text: '📚 博客文章',
+          collapsed: false,
+          items: [
+            { text: 'AI开发实践', link: '/blog/ai-development/' },
+            { text: '智能助手配置', link: '/blog/ai-assistant/' },
+            { text: 'VitePress使用指南', link: '/blog/vitepress-guide/' }
+          ]
+        }
+      ],
+      '/guide/': [
+        {
+          text: '📖 使用指南',
+          collapsed: false,
+          items: [
+            { text: '快速开始', link: '/guide/getting-started/' },
+            { text: '目录结构说明', link: '/guide/directory/' },
+            { text: '部署指南', link: '/guide/deployment/' }
+          ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/qdleader/Awesome-AI-Pedia' }

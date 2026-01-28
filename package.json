@@ -4,7 +4,7 @@
   "description": "基于VitePress的AI知识库博客",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs",
+    "dev": "node scripts/fix-config.js && vitepress dev docs",
     "prebuild": "node scripts/copy-symlinks.js",
     "build": "node scripts/fix-config.js && vitepress build docs",
     "serve": "vitepress preview docs",

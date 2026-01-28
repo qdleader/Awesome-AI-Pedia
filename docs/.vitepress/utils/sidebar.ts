@@ -43,7 +43,15 @@ export function getDisplayName(dir: string): string {
     'kai-fa-ai-ying-yong': '开发AI应用',
     '开发ai应用相关问题': '开发AI应用',
     'bu-ke-bu-zhi-de-ai-zhi-shi': '不可不知的AI知识',
-    '不可不知的Ai知识': '不可不知的AI知识'
+    '不可不知的Ai知识': '不可不知的AI知识',
+    // prompt 子目录
+    '图片': '图片',
+    '常用类提示词': '常用类提示词',
+    '开发类提示词': '开发类提示词',
+    '提示词': '提示词',
+    '项目初始化': '项目初始化',
+    // 其他子目录
+    '其他': '其他'
   }
   return nameMap[dir] || dir
 }
@@ -63,8 +71,53 @@ export function getUrlFriendlyName(dir: string): string {
 }
 
 // 生成AI知识库侧边栏
+// 递归生成侧边栏项目
+function generateSidebarItems(dirPath: string, urlBasePath: string): Array<any> {
+  const items: Array<any> = []
+  
+  if (!fs.existsSync(dirPath)) return items
+  
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true })
+  
+  // 先添加 md 文件
+  const mdFiles = entries
+    .filter((e: fs.Dirent) => e.isFile() && e.name.endsWith('.md') && e.name !== 'index.md')
+    .map((e: fs.Dirent) => e.name)
+    .sort()
+  
+  mdFiles.forEach((file: string) => {
+    const fileName = file.replace('.md', '')
+    items.push({
+      text: fileName,
+      link: `${urlBasePath}/${fileName}`
+    })
+  })
+  
+  // 再添加子目录
+  const subDirs = entries
+    .filter((e: fs.Dirent) => e.isDirectory() && !e.name.startsWith('.'))
+    .map((e: fs.Dirent) => e.name)
+    .sort()
+  
+  subDirs.forEach((subDir: string) => {
+    const subDirPath = path.join(dirPath, subDir)
+    const subItems = generateSidebarItems(subDirPath, `${urlBasePath}/${subDir}`)
+    
+    if (subItems.length > 0) {
+      items.push({
+        text: getDisplayName(subDir),
+        collapsed: true,
+        items: subItems
+      })
+    }
+  })
+  
+  return items
+}
+
 export function generateAISidebar(baseDir: string) {
-  const aiBase = path.join(baseDir, 'ai')
+  // baseDir 是项目根目录，ai 文件夹在 docs/ai 下
+  const aiBase = path.join(baseDir, 'docs', 'ai')
   const categories: Array<any> = []
 
   if (!fs.existsSync(aiBase)) {
@@ -78,20 +131,9 @@ export function generateAISidebar(baseDir: string) {
 
   dirs.forEach((dir: string) => {
     const dirPath = path.join(aiBase, dir)
-    const files = getMarkdownFiles(dirPath)
+    const items = generateSidebarItems(dirPath, `/ai/${dir}`)
 
-    if (files.length > 0) {
-      // 使用 URL 友好的目录名
-      const urlFriendlyDir = dir
-      
-      const items = files.map((file: string) => {
-        const fileName = file.replace('.md', '')
-        return {
-          text: fileName,
-          link: `/ai/${urlFriendlyDir}/${fileName}`
-        }
-      })
-
+    if (items.length > 0) {
       const displayName = getDisplayName(dir)
 
       categories.push({
@@ -106,23 +148,63 @@ export function generateAISidebar(baseDir: string) {
 }
 
 // 动态生成侧边栏
-export function generateDynamicSidebar(folderName: string, baseDir: string) {
-  const folderPath = path.join(baseDir, folderName)
-  const files = getMarkdownFiles(folderPath)
+// 递归生成动态侧边栏项目
+function generateDynamicSidebarItems(dirPath: string, urlBasePath: string): Array<any> {
+  const items: Array<any> = []
+  
+  if (!fs.existsSync(dirPath)) return items
+  
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true })
+  
+  // 先添加 md 文件
+  const mdFiles = entries
+    .filter((e: fs.Dirent) => e.isFile() && e.name.endsWith('.md') && e.name !== 'index.md')
+    .map((e: fs.Dirent) => e.name)
+    .sort()
+  
+  mdFiles.forEach((file: string) => {
+    const fileName = file.replace('.md', '')
+    items.push({
+      text: fileName,
+      link: `${urlBasePath}/${fileName}`
+    })
+  })
+  
+  // 再添加子目录
+  const subDirs = entries
+    .filter((e: fs.Dirent) => e.isDirectory() && !e.name.startsWith('.'))
+    .map((e: fs.Dirent) => e.name)
+    .sort()
+  
+  subDirs.forEach((subDir: string) => {
+    const subDirPath = path.join(dirPath, subDir)
+    const subItems = generateDynamicSidebarItems(subDirPath, `${urlBasePath}/${subDir}`)
+    
+    if (subItems.length > 0) {
+      items.push({
+        text: getDisplayName(subDir),
+        collapsed: true,
+        items: subItems
+      })
+    }
+  })
+  
+  return items
+}
 
-  if (files.length === 0) {
+export function generateDynamicSidebar(folderName: string, baseDir: string) {
+  const folderPath = path.join(baseDir, 'ai', folderName)
+  
+  if (!fs.existsSync(folderPath)) {
     return []
   }
 
   const urlFriendlyDir = getUrlFriendlyName(folderName)
+  const items = generateDynamicSidebarItems(folderPath, `/ai/${urlFriendlyDir}`)
   
-  const items = files.map((file: string) => {
-    const fileName = file.replace('.md', '')
-    return {
-      text: fileName,
-      link: `/ai/${urlFriendlyDir}/${fileName}`
-    }
-  })
+  if (items.length === 0) {
+    return []
+  }
 
   return [
     {
