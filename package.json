@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
+    "prebuild": "node scripts/copy-symlinks.js",
     "build": "vitepress build docs",
     "serve": "vitepress preview docs"
   },
