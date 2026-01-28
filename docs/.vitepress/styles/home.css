@@ -1,0 +1,199 @@
+/* ========================================
+   首页全局样式
+   ======================================== */
+
+/* Hero 区域背景渐变 */
+:root .VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+:root .VPHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    #e0f7fa 0%,    /* 薄荷绿 */
+    #e1f5fe 25%,   /* 天空蓝 */
+    #f3e5f5 50%,   /* 淡紫色 */
+    #fce4ec 75%,   /* 淡粉色 */
+    #fff9c4 100%   /* 淡黄色 */
+  );
+  opacity: 0.25;
+  z-index: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Features 卡片美化 */
+:root .VPFeature {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.08) !important;
+}
+
+:root .VPFeature:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 16px 32px rgba(100, 108, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(100, 108, 255, 0.3) !important;
+}
+
+:root .VPFeature .icon {
+  font-size: 3rem !important;
+  animation: breathe 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(100, 108, 255, 0.2));
+}
+
+@keyframes breathe {
+  0%, 100% { 
+    transform: scale(1);
+  }
+  50% { 
+    transform: scale(1.08);
+  }
+}
+
+/* Hero 按钮优化 */
+:root .VPButton.brand {
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.3) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+:root .VPButton.brand::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+:root .VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(100, 108, 255, 0.4) !important;
+}
+
+:root .VPButton.brand:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+:root .VPButton.brand:active {
+  transform: translateY(0) !important;
+}
+
+/* Features 标题 */
+.vp-doc h2:has(+ .features-section) {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 动态标题样式 (Dynamic Title) */
+:root .VPHero .name,
+:root .VPHero .text {
+  background: linear-gradient(
+    315deg,
+    #42d392 0%,
+    #647eff 25%,
+    #ff64bc 50%,
+    #fccf3e 75%,
+    #42d392 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientTitle 30s linear infinite;
+  padding-bottom: 2px; /* Prevent clipping of descenders */
+  /* Ensure hardware acceleration for smoother animation */
+  will-change: background-position;
+}
+
+@keyframes gradientTitle {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ========================================
+   暗黑模式适配
+   ======================================== */
+
+.dark .VPHero::before {
+  opacity: 0.15;
+}
+
+.dark .VPFeature {
+  background: rgba(30, 30, 30, 0.7) !important;
+  border-color: rgba(100, 108, 255, 0.2) !important;
+}
+
+.dark .VPFeature:hover {
+  background: rgba(40, 40, 40, 0.85) !important;
+}
+
+/* 适配暗黑模式 - 颜色更亮丽 */
+.dark .VPHero .name,
+.dark .VPHero .text {
+   background: linear-gradient(
+    315deg,
+    #4ddc9e 0%,
+    #7a8fff 25%,
+    #ff85c9 50%,
+    #fde047 75%,
+    #4ddc9e 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   响应式优化
+   ======================================== */
+
+@media (max-width: 768px) {
+  :root .VPFeature .icon {
+    font-size: 2.5rem !important;
+  }
+  
+  .vp-doc h2:has(+ .features-section) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
