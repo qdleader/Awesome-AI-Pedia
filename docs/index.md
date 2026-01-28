@@ -12,6 +12,7 @@ import FreshDecorations from './.vitepress/components/FreshDecorations.vue'
 import NavigationCards from './.vitepress/components/NavigationCards.vue'
 import FeatureCards from './.vitepress/components/FeatureCards.vue'
 import WaveDivider from './.vitepress/components/WaveDivider.vue'
+import PandaPeekaboo from './.vitepress/components/PandaPeekaboo.vue'
 </script>
 
 <LobsterAnimation />
@@ -27,3 +28,5 @@ import WaveDivider from './.vitepress/components/WaveDivider.vue'
 <FeatureCards />
 
 <WaveDivider />
+
+<PandaPeekaboo />

@@ -2,3 +2,5 @@
 
 ## 1. 
 点击右上角头像，选择Quick Settings Panel 
+
+Auto Execution 
