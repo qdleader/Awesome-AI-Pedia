@@ -9,8 +9,8 @@ export default defineConfig({
   description: 'AI知识库与博客',
   lang: 'zh-CN',
   
-  // 🆕 指定源目录为项目根目录
-  srcDir: '../../',
+  // 🆕 指定源目录为项目根目录（srcDir 相对于 docs/ 目录）
+  srcDir: '../',
   
   // 🆕 排除不需要的目录和文件
   srcExclude: [
