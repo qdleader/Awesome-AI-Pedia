@@ -1,4 +1,4 @@
-# MoltBot 安装
+# openclaw 安装
 
 ## 下载
 
@@ -7,8 +7,8 @@ curl -fsSL https://molt.bot/install.sh | bash
 
 ```
 
-启动 MoltBot
-安装完成后，你可以运行 MoltBot 的命令行界面：
+启动 openclaw
+安装完成后，你可以运行 openclaw 的命令行界面：
 
 clawdbot
 建议首先运行引导式设置（推荐）：

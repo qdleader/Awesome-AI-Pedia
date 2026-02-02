@@ -148,3 +148,11 @@ chmod +x start.sh
 Made with ❤️ by [qdleader](https://github.com/qdleader)
 
 </div>
+
+<div align="center">
+<br>
+<b>
+愿AI早点成为你的最好的工作伙伴！
+</b>
+<br>
+</div>

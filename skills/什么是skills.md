@@ -8,6 +8,9 @@
     有了 Skills，Claude 在处理特定任务时会更给力，比如，可以在本地就能调用 Skills 玩转图片、Excel、Word、PDF 等处理操作。
     Skills 其实就是一个文件夹，里面包含了 Claude 在需要时可以加载的指令、脚本和资源等，只有当 Claude 认为某个 Skill 和当前任务相关时，它才会启用，即按需加载。
 
+简而言之：
+    Skills 是预封装的工作流,就像游戏中的"技能包",用完即走,不占用上下文。它是别人已经编写好的、可直接使用的功能模块。
+
 ## Skills 如何被调用：
     Skills 是模型调用的——Claude 根据您的请求和 Skill 的描述自主决定何时使用它们。
 
@@ -42,7 +45,9 @@
 ## Skills 的分类：
 
 Personal Skills：个人技能，你的所有项目都可以用上的 Skills 哦，位于 ~/.claude/skills/ 目录下；
+
 Project Skills：项目技能，项目技能仅对项目生效，方便团队共享，位于每个项目中的 .claude/skills/ 目录下；
+
 Plugin Skills：插件技能，插件也能捆绑一些 Skills，安装后就能直接用，用法和个人以及项目 Skills 是一样的
 
 
@@ -65,4 +70,7 @@ Skills 存储为包含 SKILL.md 文件的目录。
     项目特定的专业知识
     共享的实用程序和脚本
     项目 Skills 被检入 git 并自动对团队成员可用。
+
+
+**官方 Skills 库:** https://github.com/anthropics/skills 
 ​

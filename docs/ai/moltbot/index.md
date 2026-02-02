@@ -1,9 +1,9 @@
 ---
 layout: doc
-title: MoltBot
+title: openclaw
 ---
 
-# MoltBot
+# openclaw
 
 本分类包含以下内容：
 
@@ -11,12 +11,12 @@ title: MoltBot
 
   <div class="article-item">
     <div class="article-item-title">
-      <a href="/Awesome-AI-Pedia/ai/moltbot/moltbot-介绍">moltbot 介绍</a>
+      <a href="/Awesome-AI-Pedia/ai/openclaw/openclaw-介绍">openclaw 介绍</a>
     </div>
   </div>
   <div class="article-item">
     <div class="article-item-title">
-      <a href="/Awesome-AI-Pedia/ai/moltbot/moltbot-安装">moltbot 安装</a>
+      <a href="/Awesome-AI-Pedia/ai/openclaw/openclaw-安装">openclaw 安装</a>
     </div>
   </div>
 </div>

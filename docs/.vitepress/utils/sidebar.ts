@@ -28,7 +28,7 @@ export function getDisplayName(dir: string): string {
     'claudeCode': 'Claude Code',
     'cursor': 'Cursor',
     'mcp': 'MCP',
-    'moltbot': 'MoltBot',
+    'openclaw': 'openclaw',
     'prompt': 'Prompt',
     'rules': 'Rules',
     'skills': 'Skills',

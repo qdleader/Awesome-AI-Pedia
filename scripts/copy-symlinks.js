@@ -18,7 +18,7 @@ const symlinkMap = {
   'hao-de-rules': '好的rules',
   'kai-fa-ai-ying-yong': '开发ai应用相关问题',
   'mcp': 'mcp',
-  'moltbot': 'moltbot',
+  'openclaw': 'openclaw',
   'prompt': 'prompt',
   'rules': 'rules',
   'shi-yong-ai-ji-qiao': '使用ai技巧',

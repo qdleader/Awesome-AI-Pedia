@@ -102,7 +102,7 @@ function getDisplayName(dir: string): string {
     'claudecode': 'Claude Code',
     'cursor': 'Cursor',
     'mcp': 'MCP',
-    'moltbot': 'MoltBot',
+    'openclaw': 'openclaw',
     'prompt': 'Prompt',
     'rules': 'Rules',
     'skills': 'Skills',
