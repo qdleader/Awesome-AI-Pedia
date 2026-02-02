@@ -192,15 +192,18 @@ function generateDynamicSidebarItems(dirPath: string, urlBasePath: string): Arra
   return items
 }
 
+// 🆕 修改为从根目录读取
 export function generateDynamicSidebar(folderName: string, baseDir: string) {
-  const folderPath = path.join(baseDir, 'ai', folderName)
+  // 直接从根目录读取，不再使用 ai 子目录
+  const folderPath = path.join(baseDir, folderName)
   
   if (!fs.existsSync(folderPath)) {
     return []
   }
 
   const urlFriendlyDir = getUrlFriendlyName(folderName)
-  const items = generateDynamicSidebarItems(folderPath, `/ai/${urlFriendlyDir}`)
+  // URL 路径不再包含 /ai/ 前缀
+  const items = generateDynamicSidebarItems(folderPath, `/${urlFriendlyDir}`)
   
   if (items.length === 0) {
     return []
@@ -213,6 +216,72 @@ export function generateDynamicSidebar(folderName: string, baseDir: string) {
       items
     }
   ]
+}
+
+// 🆕 生成所有内容目录的侧边栏配置
+export function generateAllSidebars(baseDir: string) {
+  const sidebarConfig: Record<string, any> = {}
+  
+  // 需要排除的目录
+  const excludedDirs = [
+    'node_modules',
+    'docs',
+    'scripts',
+    '.git',
+    '.github',
+    '.vitepress',
+    'public',
+    'dist',
+    'anime-video',
+    '.agent',
+    '.claude'
+  ]
+  
+  // 获取所有内容目录
+  const allRootItems = fs.readdirSync(baseDir, { withFileTypes: true })
+  const contentDirs = allRootItems
+    .filter((item: fs.Dirent) => 
+      item.isDirectory() && 
+      !excludedDirs.includes(item.name) &&
+      !item.name.startsWith('.')
+    )
+    .map((item: fs.Dirent) => item.name)
+  
+  // 为每个内容目录生成侧边栏
+  contentDirs.forEach((dir: string) => {
+    const urlPath = getUrlFriendlyName(dir)
+    const sidebar = generateDynamicSidebar(dir, baseDir)
+    if (sidebar.length > 0) {
+      sidebarConfig[`/${urlPath}/`] = sidebar
+    }
+  })
+  
+  // 添加固定的侧边栏 (博客和指南，它们在 docs/ 目录下)
+  sidebarConfig['/docs/blog/'] = [
+    {
+      text: '📚 博客文章',
+      collapsed: false,
+      items: [
+        { text: 'AI开发实践', link: '/docs/blog/ai-development/' },
+        { text: '智能助手配置', link: '/docs/blog/ai-assistant/' },
+        { text: 'VitePress使用指南', link: '/docs/blog/vitepress-guide/' }
+      ]
+    }
+  ]
+  
+  sidebarConfig['/docs/guide/'] = [
+    {
+      text: '📖 使用指南',
+      collapsed: false,
+      items: [
+        { text: '快速开始', link: '/docs/guide/getting-started/' },
+        { text: '目录结构说明', link: '/docs/guide/directory/' },
+        { text: '部署指南', link: '/docs/guide/deployment/' }
+      ]
+    }
+  ]
+  
+  return sidebarConfig
 }
 
 // 动态生成顶部导航栏
@@ -252,7 +321,7 @@ export function generateNav(baseDir: string) {
     const urlPath = getUrlFriendlyName(dir)
     navItems.push({
       text: getDisplayName(dir),
-      link: `/ai/${urlPath}/`
+      link: `/${urlPath}/`  // 🆕 移除 /ai/ 前缀
     })
   })
 

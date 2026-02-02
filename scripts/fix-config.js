@@ -158,21 +158,23 @@ function fixSidebar(nameMap, folders) {
 
 // 主函数
 function main() {
-  console.log('🔧 自动修复配置文件...\n')
-
-  const folders = getContentFolders()
-  const symlinkMap = getSymlinkMap()
-  const nameMap = getNameMap()
-
-  console.log(`📁 找到 ${folders.length} 个内容文件夹\n`)
-
-  fixCopySymlinks(symlinkMap, folders)
-  fixSidebar(nameMap, folders)
-
-  console.log('\n✨ 配置修复完成!')
-  console.log('\n💡 下一步:')
-  console.log('   1. 运行 npm run check-config 验证配置')
-  console.log('   2. 运行 npm run build 重新构建')
+  console.log('⚠️  fix-config.js 暂时禁用（正在进行重构）')
+  console.log('✅ 跳过配置修复，直接启动服务')
+  // console.log('🔧 自动修复配置文件...\n')
+  
+  // const folders = getContentFolders()
+  // const symlinkMap = getSymlinkMap()
+  // const nameMap = getNameMap()
+  
+  // console.log(`📁 找到 ${folders.length} 个内容文件夹\n`)
+  
+  // fixCopySymlinks(symlinkMap, folders)
+  // fixSidebar(nameMap, folders)
+  
+  // console.log('\n✨ 配置修复完成!')
+  // console.log('\n💡 下一步:')
+  // console.log('   1. 运行 npm run check-config 验证配置')
+  // console.log('   2. 运行 npm run build 重新构建')
 }
 
 main()

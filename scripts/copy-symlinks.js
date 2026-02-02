@@ -77,7 +77,11 @@ for (const [linkName, targetDir] of Object.entries(symlinkMap)) {
     copyDirectory(targetPath, linkPath)
     console.log(`  ✅ 成功复制\n`)
   } catch (error) {
-    console.error(`  ❌ 复制失败: ${error.message}\n`)
+    console.error(`  ❌ 复制失败: ${error.message}\n`),
+  'agent': '.agent',
+  'anime-video': 'anime-video',
+  'agent': '.agent',
+  'anime-video': 'anime-video'
   }
 }
 

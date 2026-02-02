@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
-import { getProjectRoot, generateNav, generateAISidebar } from './utils/sidebar'
+import { getProjectRoot, generateNav, generateAllSidebars } from './utils/sidebar'
 
 const projectRoot = getProjectRoot()
 
@@ -8,6 +8,27 @@ export default defineConfig({
   title: 'Awesome AI Pedia',
   description: 'AI知识库与博客',
   lang: 'zh-CN',
+  
+  // 🆕 指定源目录为项目根目录
+  srcDir: '../../',
+  
+  // 🆕 排除不需要的目录和文件
+  srcExclude: [
+    'node_modules/**',
+    'scripts/**',
+    '.git/**',
+    '.github/**',
+    'dist/**',
+    'anime-video/**',
+    '.agent/**',
+    '.claude/**',
+    '.vscode/**',
+    '*.lock',
+    'package.json',
+    'package-lock.json',
+    '*.sh'
+  ],
+  
   base: '/Awesome-AI-Pedia/',
   lastUpdated: true,
   cleanUrls: true,
@@ -17,31 +38,8 @@ export default defineConfig({
   themeConfig: {
     nav: generateNav(projectRoot),
 
-    sidebar: {
-      '/ai/': generateAISidebar(projectRoot),
-      '/blog/': [
-        {
-          text: '📚 博客文章',
-          collapsed: false,
-          items: [
-            { text: 'AI开发实践', link: '/blog/ai-development/' },
-            { text: '智能助手配置', link: '/blog/ai-assistant/' },
-            { text: 'VitePress使用指南', link: '/blog/vitepress-guide/' }
-          ]
-        }
-      ],
-      '/guide/': [
-        {
-          text: '📖 使用指南',
-          collapsed: false,
-          items: [
-            { text: '快速开始', link: '/guide/getting-started/' },
-            { text: '目录结构说明', link: '/guide/directory/' },
-            { text: '部署指南', link: '/guide/deployment/' }
-          ]
-        }
-      ]
-    },
+    // 🆕 动态生成所有内容目录的侧边栏
+    sidebar: generateAllSidebars(projectRoot),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/qdleader/Awesome-AI-Pedia' }
