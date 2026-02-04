@@ -1,0 +1,20 @@
+import{_ as s,o as a,c as e,ag as l}from"./chunks/framework.D7ooTGWA.js";const k=JSON.parse('{"title":"code-simplifier 插件：把 AI 生成的“屎山代码”整理成清晰、可维护、高可读性","description":"","frontmatter":{},"headers":[],"relativePath":"常用skills/code-simplifier-插件安装.md","filePath":"常用skills/code-simplifier-插件安装.md","lastUpdated":1770184231000}'),n={name:"常用skills/code-simplifier-插件安装.md"};function t(p,i,d,r,h,o){return a(),e("div",null,[...i[0]||(i[0]=[l(`<h1 id="code-simplifier-插件-把-ai-生成的-屎山代码-整理成清晰、可维护、高可读性" tabindex="-1">code-simplifier 插件：把 AI 生成的“屎山代码”整理成清晰、可维护、高可读性 <a class="header-anchor" href="#code-simplifier-插件-把-ai-生成的-屎山代码-整理成清晰、可维护、高可读性" aria-label="Permalink to &quot;code-simplifier 插件：把 AI 生成的“屎山代码”整理成清晰、可维护、高可读性&quot;">​</a></h1><h2 id="claude-code-官方开源-code-simplifier-在不改变任何功能的前提下-统一命名、拆解深层嵌套、删除冗余逻辑、遵循-claude-md-规范-让-ai-生成代码从-能跑-升级为-好维护" tabindex="-1">Claude Code 官方开源 code-simplifier：在不改变任何功能的前提下，统一命名、拆解深层嵌套、删除冗余逻辑、遵循 CLAUDE.md 规范，让 AI 生成代码从“能跑”升级为“好维护” <a class="header-anchor" href="#claude-code-官方开源-code-simplifier-在不改变任何功能的前提下-统一命名、拆解深层嵌套、删除冗余逻辑、遵循-claude-md-规范-让-ai-生成代码从-能跑-升级为-好维护" aria-label="Permalink to &quot;Claude Code 官方开源 code-simplifier：在不改变任何功能的前提下，统一命名、拆解深层嵌套、删除冗余逻辑、遵循 CLAUDE.md 规范，让 AI 生成代码从“能跑”升级为“好维护”&quot;">​</a></h2><h2 id="code-simplifier-到底是什么" tabindex="-1">code-simplifier 到底是什么？ <a class="header-anchor" href="#code-simplifier-到底是什么" aria-label="Permalink to &quot;code-simplifier 到底是什么？&quot;">​</a></h2><pre><code>一句话概括它的使命：
+
+功能绝对守恒（不改行为），只优化表达方式（更清晰、更一致、更好维护）。
+
+它擅长做这些“AI 写代码最容易翻车”的整理工作：
+
+统一命名风格（camelCase / snake_case / 项目约定）
+
+删除冗余逻辑与重复代码
+
+把深层嵌套拆成清晰的小函数
+
+自动补充“必要注释”（不写废话注释）
+
+优化结构但拒绝过度抽象
+
+严格遵守项目自定义规范（读取CLAUDE.md）
+</code></pre><h2 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h2><div class="language-js vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">plugin marketplace update claude</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">plugins</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">official</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> </span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">plugin install code</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">simplifier</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>/plugin list 查看已安装插件</p><h2 id="使用" tabindex="-1">使用 <a class="header-anchor" href="#使用" aria-label="Permalink to &quot;使用&quot;">​</a></h2><div class="language-js vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Use the code</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">simplifier agent to clean </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;">this</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> up</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div>`,9)])])}const m=s(n,[["render",t]]);export{k as __pageData,m as default};
