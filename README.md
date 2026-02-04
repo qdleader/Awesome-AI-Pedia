@@ -135,9 +135,7 @@ chmod +x start.sh
 
 ## 📞 联系方式
 
-- **在线访问**: https://qdleader.github.io/Awesome-AI-Pedia/
-- **GitHub Issues**: https://github.com/qdleader/Awesome-AI-Pedia/issues
-- **GitHub Discussions**: https://github.com/qdleader/Awesome-AI-Pedia/discussions
+微信搜索 硬核Ai社 回复加群，加入AI交流群，一起学习AI
 
 ---
 
