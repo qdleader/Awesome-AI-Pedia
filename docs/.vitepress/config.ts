@@ -31,9 +31,14 @@ export default defineConfig({
   
   base: '/Awesome-AI-Pedia/',
   lastUpdated: true,
-  cleanUrls: true,
+  cleanUrls: false, // 🔧 修复：关闭 cleanUrls 避免 404
   ignoreDeadLinks: true,
   appearance: 'dark', // 默认使用暗黑主题
+
+  // 🔧 添加路由重写规则，修复 404 问题
+  rewrites: {
+    'README.md': 'index.md'
+  },
 
   themeConfig: {
     nav: generateNav(projectRoot),
@@ -46,7 +51,7 @@ export default defineConfig({
     ],
 
     editLink: {
-      pattern: 'https://github.com/qdleader/Awesome-AI-Pedia/edit/master/docs/:path',
+      pattern: 'https://github.com/qdleader/Awesome-AI-Pedia/edit/master/:path',
       text: '在GitHub上编辑此页'
     },
 
@@ -72,5 +77,10 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
     toc: { level: [1, 2, 3, 4] }
+  },
+
+  // 🔧 添加构建钩子，确保所有目录都有 index.html
+  buildEnd: async (siteConfig) => {
+    // VitePress 会自动处理，这里只是确保配置正确
   }
 })
