@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/:path*.html"
+    }
+  ],
+  "cleanUrls": false,
+  "trailingSlash": false
+}
+
