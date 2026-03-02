@@ -1,4 +1,4 @@
-#  code-simplifier 插件：把 AI 生成的“屎山代码”整理成清晰、可维护、高可读性
+#  code-simplifier 插件：把 AI 生成的“屎山代码”整理成清晰、可维护、高可读性🌟🌟🌟🌟
 
 ## Claude Code 官方开源 code-simplifier：在不改变任何功能的前提下，统一命名、拆解深层嵌套、删除冗余逻辑、遵循 CLAUDE.md 规范，让 AI 生成代码从“能跑”升级为“好维护”
 
