@@ -4,12 +4,8 @@
 
 **一个全面的 AI 知识库与博客平台**
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?style=flat-square)](https://qdleader.github.io/Awesome-AI-Pedia/)
-[![VitePress](https://img.shields.io/badge/VitePress-1.3.4-646cff?style=flat-square)](https://vitepress.vuejs.org/)
-[![Vue](https://img.shields.io/badge/Vue-3.5.11-4FC08D?style=flat-square)](https://vuejs.org/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](./LICENSE)
 
-[� 在线访问](https://qdleader.github.io/Awesome-AI-Pedia/) | [🚀 快速开始](#-快速开始) | [�📚 文档](https://qdleader.github.io/Awesome-AI-Pedia/guide/)
+[🔥 在线访问](https://qdleader.github.io/Awesome-AI-Pedia/) | [🚀 快速开始](#-快速开始) | [📚 文档](https://qdleader.github.io/Awesome-AI-Pedia/guide/)
 
 </div>
 
