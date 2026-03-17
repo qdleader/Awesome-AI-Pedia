@@ -51,9 +51,8 @@
 
 在本指南的编写过程中，参考了以下优质资源：
 
-- **知乎深度解析**：[Free LLM API resources，免费大模型 API 资源汇总](https://zhuanlan.zhihu.com/p/2014258927727044376)
 - **GitHub 热门项目**：[cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) (目前最完整的免费 API 导航列表)
-- **项目设计参考**：[free-llm-api-resources 项目扩展性设计：模块化架构的终极指南](https://blog.csdn.net/gitblog_00916/article/details/145336729)
+
 
 ---
 > 💡 **提示**：免费 API 额度及政策具有时效性，建议在使用前查看各平台的最新官方公告。
