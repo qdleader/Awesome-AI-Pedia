@@ -84,7 +84,7 @@ function getFirstArticleLink(dirPath: string, urlBasePath: string): string | nul
     .sort()
 
   // 跳过 index.md，返回第一个文章
-  const firstArticle = mdFiles.find(file => file !== 'index.md')
+  const firstArticle = mdFiles.find((file: string) => file !== 'index.md')
 
   if (!firstArticle) return null
 
@@ -334,10 +334,27 @@ export function generateNav(baseDir: string) {
 
   const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })
 
+  // 定义特殊项目的优先级
+  const priorityMap: Record<string, number> = {
+    'openclaw': 1,
+    '常用skills': 2,
+    'mcp': 3,
+    'claudeCode': 4,
+    'Agent': 999 // 放到最后
+  }
+
   const contentDirs = allRootItems
     .filter((item: fs.Dirent) => item.isDirectory() && !excludedDirs.includes(item.name))
     .map((item: fs.Dirent) => item.name)
-    .sort()
+    .sort((a: string, b: string) => {
+      const pA = priorityMap[a] || 50
+      const pB = priorityMap[b] || 50
+      
+      if (pA !== pB) {
+        return pA - pB
+      }
+      return a.localeCompare(b)
+    })
 
   // 首先添加首页
   navItems.push({ text: '首页', link: '/' })
