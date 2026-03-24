@@ -6,3 +6,5 @@ https://skills.sh/
 
 
 https://skillsmp.com
+
+https://mcpmarket.com/daily/skills
