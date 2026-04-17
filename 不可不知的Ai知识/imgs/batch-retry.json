@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": "03-comparison-rag-vs-finetuning",
+      "promptFiles": ["/Users/icourt/github/Awesome-AI-Pedia/不可不知的Ai知识/imgs/prompts/03-comparison-rag-vs-finetuning.md"],
+      "image": "/Users/icourt/github/Awesome-AI-Pedia/不可不知的Ai知识/imgs/03-comparison-rag-vs-finetuning.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "04-infographic-rag-advantages",
+      "promptFiles": ["/Users/icourt/github/Awesome-AI-Pedia/不可不知的Ai知识/imgs/prompts/04-infographic-rag-advantages.md"],
+      "image": "/Users/icourt/github/Awesome-AI-Pedia/不可不知的Ai知识/imgs/04-infographic-rag-advantages.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "05-framework-advanced-rag",
+      "promptFiles": ["/Users/icourt/github/Awesome-AI-Pedia/不可不知的Ai知识/imgs/prompts/05-framework-advanced-rag.md"],
+      "image": "/Users/icourt/github/Awesome-AI-Pedia/不可不知的Ai知识/imgs/05-framework-advanced-rag.png",
+      "ar": "16:9",
+      "quality": "2k"
+    }
+  ]
+}
