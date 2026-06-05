@@ -30,6 +30,17 @@
 - **说明**：最大的开源模型社区。
 - **免费资源**：支持数以万计开源模型的推理访问。
 
+### 6. [CoderPlan](https://coderplan.ai/)
+- **说明**：LLM API 中转网关，提供 OpenAI 兼容格式的统一 API 接口。
+- **免费资源**：新用户 ¥10（约 $1.50）永久免费额度，无需信用卡。
+- **模型覆盖**：Claude (Sonnet 4, Opus 4.6)、GPT (4o, o3)、Gemini (2.5 Pro, 2.5 Flash)、DeepSeek (R1, V3)、Grok (3, 3 Mini)。
+- **优点**：OpenAI SDK 兼容，支持 Claude Code、Cursor、Continue.dev 等主流 AI 编码工具直接接入，用完免费额度后按量付费（约官方价格的 70%）。
+- **快速接入**：
+  ```bash
+  export OPENAI_API_KEY=your-coderplan-key
+  export OPENAI_BASE_URL=https://api.coderplan.ai/v1
+  ```
+
 ---
 
 ## 🏗️ 基础设施类
